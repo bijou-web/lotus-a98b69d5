@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow, noimageindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fff4ec">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%8C%B8%3C/text%3E%3C/svg%3E">
+<title>A Little Message for You</title>
+<style>
+:root{--bg1:#fff4ec;--bg2:#fde8f0;--card:#fffdfb;--ink:#3b2a2a;--soft:#6b4f4f;--rose:#c2185b;--rose2:#f8c8d8;--accent:#9c3d6b;}
+*{box-sizing:border-box}
+html{font-size:24px;-webkit-text-size-adjust:100%}
+@media (min-width:700px){html{font-size:27px}}
+body{margin:0;min-height:100vh;font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif;color:var(--ink);line-height:1.5;
+ background:linear-gradient(170deg,var(--bg1),var(--bg2) 60%,#eaf4ff);}
+main{max-width:760px;margin:0 auto;padding:1.1rem 1rem 2rem}
+.date{font-size:1.25rem;font-weight:700;color:var(--accent);text-align:center;margin:.2rem 0 0;letter-spacing:.01em}
+h1.greet{font-size:2rem;line-height:1.2;text-align:center;margin:.3rem 0 1rem;color:var(--ink)}
+.card{background:var(--card);border-radius:36px;padding:1.1rem 1.2rem 1.4rem;box-shadow:0 10px 30px rgba(180,110,130,.18);border:3px solid #f7d6e0}
+.art{display:block;width:min(62vw,300px);height:auto;margin:0 auto .4rem}
+.tag{display:block;width:max-content;margin:0 auto .5rem;font-size:.8rem;font-weight:700;padding:.25rem .9rem;border-radius:999px;background:#fbe3ec;color:#7a2a4f;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tag.wisdom{background:#fbe3ec;color:#7a2a4f}.tag.pranic{background:#fff0c7;color:#6b4a00}
+h2.title{font-size:1.6rem;line-height:1.25;text-align:center;margin:.2rem 0 .6rem;color:var(--rose)}
+p.msg{font-size:1.1rem;margin:0 0 .5rem;text-align:center}
+p.by{font-size:.95rem;text-align:center;color:var(--soft);font-style:italic;margin:0 0 .6rem}
+.step{background:#fff3d6;border:3px dashed #f2c46b;border-radius:26px;padding:.8rem 1rem;margin-top:.9rem}
+.step b{display:block;font-size:.95rem;color:#8a5a00;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.step span{font-size:1.1rem}
+button.read{display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;min-height:80px;margin:1.2rem 0 0;font:700 1.1rem system-ui,-apple-system,"Segoe UI",sans-serif;
+ color:#fff;background:#b0306a;border:none;border-radius:999px;box-shadow:0 6px 0 #7d1f4a;cursor:pointer;touch-action:manipulation}
+button.read:active{transform:translateY(4px);box-shadow:0 2px 0 #7d1f4a}
+button.read:focus-visible{outline:5px solid #ffcc4d;outline-offset:4px}
+.note{margin:1.1rem 0 0;text-align:center;font-size:1.05rem;color:#6b3552;background:#fde2ec;border-radius:22px;padding:.7rem 1rem}
+.note[hidden]{display:none}
+/*PHOTO-CSS-START*/
+/* family photo */
+.photo{margin:1.4rem auto 0;max-width:640px;background:#fff;padding:.7rem .7rem 1rem;border-radius:28px;box-shadow:0 12px 30px rgba(120,70,90,.22);transform:rotate(-1.2deg);border:1px solid #f3e3e8}
+.photo[hidden]{display:none}
+.photo button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:20px;overflow:hidden}
+.photo button:focus-visible{outline:5px solid #ffcc4d;outline-offset:4px}
+.photo img{display:block;width:100%;height:auto;max-height:70vh;object-fit:cover;border-radius:20px;background:#f7eef1}
+.photo figcaption{text-align:center;font-size:1.1rem;color:#7a2a4f;margin-top:.6rem;font-style:italic}
+.photo .hint{display:block;font-size:.8rem;color:var(--soft);font-style:normal;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.viewer{position:fixed;inset:0;z-index:10;background:rgba(40,20,30,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem;gap:1rem}
+.viewer[hidden]{display:none}
+.viewer img{max-width:100%;max-height:78vh;border-radius:18px;box-shadow:0 10px 40px rgba(0,0,0,.5);background:#fff}
+.viewer button{min-height:72px;min-width:220px;font:700 1.1rem system-ui,-apple-system,"Segoe UI",sans-serif;color:#7a2a4f;background:#fff;border:0;border-radius:999px;cursor:pointer}
+/*PHOTO-CSS-END*/
+footer{text-align:center;color:var(--soft);font-size:.85rem;margin-top:1.2rem}
+/* gentle animations */
+.art .floaty{animation:float 5s ease-in-out infinite;transform-origin:100px 100px}
+.spark{animation:sparkle 3s ease-in-out infinite}
+.spin{animation:spin 40s linear infinite;transform-origin:100px 100px}
+.steam{animation:steam 3.5s ease-in-out infinite}
+.beat{animation:beat 3s ease-in-out infinite;transform-origin:100px 105px}
+.sway{animation:sway 5s ease-in-out infinite;transform-origin:100px 170px}
+.flap{animation:flap 2.8s ease-in-out infinite;transform-origin:100px 100px}
+.twinkle{animation:sparkle 3s ease-in-out infinite}
+.glow{animation:glow 3s ease-in-out infinite}
+@keyframes glow{0%,100%{opacity:.2}50%{opacity:.45}}
+.flame{animation:flicker 2s ease-in-out infinite;transform-origin:100px 72px}
+.bub{animation:bub 3s ease-in infinite}.b2{animation-delay:1.3s}
+.float2{animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes sparkle{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes steam{0%,100%{opacity:.35;transform:translateY(0)}50%{opacity:.9;transform:translateY(-5px)}}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+@keyframes flap{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.9)}}
+@keyframes flicker{0%,100%{transform:scale(1)}50%{transform:scale(1.06,.95)}}
+@keyframes bub{0%{transform:translateY(0);opacity:0}30%{opacity:1}100%{transform:translateY(-60px);opacity:0}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media (prefers-contrast:more){:root{--ink:#000;--soft:#222}}
+</style>
+</head>
+<body>
+<main>
+  <p class="date" id="date"></p>
+  <h1 class="greet" id="greet"></h1>
+  <article class="card" aria-live="polite">
+    <svg class="art" id="art" viewBox="0 0 200 200" role="img" aria-hidden="true"></svg>
+    <span class="tag" id="tag"></span>
+    <h2 class="title" id="title"></h2>
+    <p class="msg" id="msg"></p>
+    <p class="by" id="by" hidden></p>
+    <div class="step"><b>🌱 Today's little step</b><span id="step"></span></div>
+    <button class="read" id="read" type="button"><span aria-hidden="true">🔊</span> <span id="readLabel">Read aloud</span></button>
+    <p class="note" id="note" hidden>Come back tomorrow for a new message 🌸</p>
+  </article>
+  <!--PHOTO-START-->
+  <figure class="photo" id="photo" hidden>
+    <button type="button" id="photoBtn" aria-label="Show the photo bigger"><img id="photoImg" alt="A family photo" decoding="async"></button>
+    <figcaption id="photoCap">A happy memory 💛<span class="hint">Tap the photo to see it bigger</span></figcaption>
+  </figure>
+  <div class="viewer" id="viewer" hidden role="dialog" aria-label="Family photo, large">
+    <img id="viewerImg" alt="A family photo, large">
+    <button type="button" id="viewerClose">✕ Close</button>
+  </div>
+  <!--PHOTO-END-->
+  <footer id="foot"></footer>
+</main>
+<script>
+const NAME = 'Catherine'; // ← change the name here
+
+const FACE = (x,y,s=1,c='#5a3a3a') => `<g transform="translate(${x} ${y}) scale(${s})"><circle cx="-14" cy="0" r="4.5" fill="${c}"/><circle cx="14" cy="0" r="4.5" fill="${c}"/><circle cx="-12.5" cy="-1.5" r="1.4" fill="#fff"/><circle cx="15.5" cy="-1.5" r="1.4" fill="#fff"/><path d="M-7 8 Q0 15 7 8" stroke="${c}" stroke-width="3.2" fill="none" stroke-linecap="round"/><ellipse cx="-24" cy="9" rx="6" ry="3.5" fill="#ff9aa8" opacity=".6"/><ellipse cx="24" cy="9" rx="6" ry="3.5" fill="#ff9aa8" opacity=".6"/></g>`;
+const SPARK = `<g class="spark"><path d="M30 40 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" fill="#ffd36e"/><path d="M168 150 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5z" fill="#ffb3c7"/><circle cx="170" cy="45" r="4" fill="#bfe3ff"/></g>`;
+const ART = {
+lotus:`<ellipse cx="100" cy="165" rx="70" ry="12" fill="#b9e4dc"/><path d="M100 150 C70 140 50 115 55 85 C75 95 92 115 100 150Z" fill="#ffb7c9"/><path d="M100 150 C130 140 150 115 145 85 C125 95 108 115 100 150Z" fill="#ffb7c9"/><path d="M100 150 C80 125 80 85 100 55 C120 85 120 125 100 150Z" fill="#ffd1dc"/><path d="M100 152 C60 150 35 135 30 115 C60 115 85 130 100 152Z" fill="#f79db4"/><path d="M100 152 C140 150 165 135 170 115 C140 115 115 130 100 152Z" fill="#f79db4"/>${FACE(100,112,.8)}`,
+sun:`<g class="spin"><g fill="#ffcf5c">${[0,45,90,135,180,225,270,315].map(a=>`<path transform="rotate(${a} 100 100)" d="M100 18 l10 26 h-20z"/>`).join('')}</g></g><circle cx="100" cy="100" r="50" fill="#ffdf7e"/><circle cx="100" cy="100" r="50" fill="none" stroke="#ffc94a" stroke-width="4"/>${FACE(100,98,1.1)}`,
+cat:`<path d="M50 80 L58 35 L85 62Z M150 80 L142 35 L115 62Z" fill="#ffc98f"/><path d="M58 45 L62 65 L75 60Z M142 45 L138 65 L125 60Z" fill="#ffadbb"/><ellipse cx="100" cy="100" rx="58" ry="48" fill="#ffd6a8"/><path class="tail" d="M150 160 q40 -10 30 -50" stroke="#ffc98f" stroke-width="12" fill="none" stroke-linecap="round"/><ellipse cx="100" cy="160" rx="48" ry="25" fill="#ffd6a8"/><g stroke="#8a6040" stroke-width="2.5" stroke-linecap="round"><path d="M40 105 h-22 M42 115 l-20 6 M160 105 h22 M158 115 l20 6"/></g><path d="M95 104 l5 4 5 -4z" fill="#ff8fa3"/>${FACE(100,95,1)}`,
+bird:`<ellipse cx="100" cy="175" rx="55" ry="7" fill="#d7ecd0"/><ellipse cx="100" cy="110" rx="55" ry="50" fill="#9fd6f5"/><ellipse cx="100" cy="130" rx="35" ry="28" fill="#dff3ff"/><path class="wing" d="M60 110 q-30 5 -25 35 q20 -5 35 -20z" fill="#7cc4ec"/><path d="M150 100 l22 -6 -18 16z" fill="#ffb347"/><path d="M92 58 q8 -20 20 -8" stroke="#7cc4ec" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M90 158 v15 M110 158 v15" stroke="#ffb347" stroke-width="5" stroke-linecap="round"/>${FACE(112,100,.85)}<g class="twinkle"><path d="M40 50 v-22 l14 -4 v22" stroke="#b39ddb" stroke-width="4" fill="none"/><circle cx="36" cy="50" r="5" fill="#b39ddb"/><circle cx="50" cy="46" r="5" fill="#b39ddb"/></g>`,
+flower:`<path d="M100 120 v55" stroke="#7cc47c" stroke-width="7"/><path d="M100 160 q-30 -5 -35 -25 q25 0 35 25z M100 150 q30 -5 35 -25 q-25 0 -35 25z" fill="#8fd18f"/><g class="sway">${[0,60,120,180,240,300].map(a=>`<ellipse transform="rotate(${a} 100 80)" cx="100" cy="42" rx="20" ry="28" fill="#ffb7d0"/>`).join('')}<circle cx="100" cy="80" r="30" fill="#ffe28a"/>${FACE(100,78,.75)}</g>`,
+moon:`<g class="twinkle"><circle cx="45" cy="50" r="4" fill="#ffe9a8"/><circle cx="160" cy="40" r="3" fill="#ffe9a8"/><circle cx="165" cy="150" r="4" fill="#ffe9a8"/></g><path d="M120 30 a70 70 0 1 0 45 115 a58 58 0 1 1 -45 -115z" fill="#ffe9a8" stroke="#f5d06a" stroke-width="4"/><g transform="translate(-8 0)">${FACE(92,112,.85)}</g>`,
+heart:`<path class="beat" d="M100 170 C40 130 25 95 40 68 C55 42 90 45 100 72 C110 45 145 42 160 68 C175 95 160 130 100 170Z" fill="#ff9fb2" stroke="#f47c96" stroke-width="5"/><path d="M55 75 q5 -15 20 -15" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" opacity=".8"/>${FACE(100,105,1)}`,
+butterfly:`<g class="flap"><path d="M100 100 C70 40 25 45 35 90 C40 110 70 110 100 100Z" fill="#c5b3f5"/><path d="M100 100 C130 40 175 45 165 90 C160 110 130 110 100 100Z" fill="#c5b3f5"/><path d="M100 105 C70 115 45 140 65 160 C85 170 95 140 100 105Z" fill="#ffc2dc"/><path d="M100 105 C130 115 155 140 135 160 C115 170 105 140 100 105Z" fill="#ffc2dc"/><circle cx="60" cy="80" r="9" fill="#fff" opacity=".7"/><circle cx="140" cy="80" r="9" fill="#fff" opacity=".7"/></g><ellipse cx="100" cy="110" rx="10" ry="38" fill="#8f7ad6"/><path d="M96 75 q-10 -25 -20 -28 M104 75 q10 -25 20 -28" stroke="#8f7ad6" stroke-width="3.5" fill="none" stroke-linecap="round"/><g transform="translate(100 95) scale(.35)"><circle cx="-14" cy="0" r="5" fill="#fff"/><circle cx="14" cy="0" r="5" fill="#fff"/><path d="M-7 10 Q0 17 7 10" stroke="#fff" stroke-width="4" fill="none"/></g>`,
+rainbow:`<g fill="none" stroke-width="14" stroke-linecap="round"><path d="M25 150 a75 75 0 0 1 150 0" stroke="#ffadad"/><path d="M39 150 a61 61 0 0 1 122 0" stroke="#ffd6a5"/><path d="M53 150 a47 47 0 0 1 94 0" stroke="#fdffb6"/><path d="M67 150 a33 33 0 0 1 66 0" stroke="#caffbf"/><path d="M81 150 a19 19 0 0 1 38 0" stroke="#9bf6ff"/></g><g class="float2"><ellipse cx="38" cy="155" rx="30" ry="18" fill="#fff" stroke="#e3eefa" stroke-width="3"/><ellipse cx="162" cy="155" rx="30" ry="18" fill="#fff" stroke="#e3eefa" stroke-width="3"/>${FACE(38,152,.5)}${FACE(162,152,.5)}</g>`,
+turtle:`<ellipse cx="100" cy="165" rx="75" ry="8" fill="#d7ecd0"/><ellipse cx="45" cy="120" rx="22" ry="18" fill="#a8e0a0"/><path d="M60 150 v15 M140 150 v15 M75 152 v14 M125 152 v14" stroke="#a8e0a0" stroke-width="12" stroke-linecap="round"/><path d="M55 145 a50 50 0 0 1 100 0z" fill="#7cc47c" stroke="#5aa55a" stroke-width="4"/><path d="M80 110 l20 -15 20 15 -8 22 h-24z" fill="#9fd89f"/><path d="M153 140 q15 -3 12 8" stroke="#a8e0a0" stroke-width="7" fill="none"/><g transform="translate(-4 0)">${FACE(49,118,.55)}</g>`,
+cloud:`<g class="float2"><path d="M50 140 a30 30 0 0 1 5 -60 a40 40 0 0 1 75 -10 a32 32 0 0 1 25 70z" fill="#fff" stroke="#cfe3f7" stroke-width="5"/>${FACE(100,110,.95)}</g><g class="rain" stroke="#a8d4ff" stroke-width="5" stroke-linecap="round"><path d="M70 160 v10"/><path d="M100 165 v10"/><path d="M130 160 v10"/></g>`,
+sky:`<rect x="20" y="30" width="160" height="140" rx="30" fill="#cfeaff"/><circle cx="140" cy="70" r="20" fill="#ffe08a"/><g class="float2"><path d="M45 130 a18 18 0 0 1 5 -35 a25 25 0 0 1 45 -5 a20 20 0 0 1 15 40z" fill="#fff"/></g>${FACE(140,70,.5)}`,
+leaf:`<g class="sway"><path d="M100 170 C40 140 35 70 100 30 C165 70 160 140 100 170Z" fill="#a8e0a0" stroke="#7cc47c" stroke-width="5"/><path d="M100 165 V50" stroke="#7cc47c" stroke-width="4"/><path d="M100 90 l-22 -14 M100 115 l-28 -14 M100 90 l22 -14 M100 115 l28 -14" stroke="#7cc47c" stroke-width="3"/>${FACE(100,125,.65)}</g>`,
+candle:`<ellipse cx="100" cy="170" rx="50" ry="10" fill="#f7d9b5"/><rect x="70" y="80" width="60" height="88" rx="10" fill="#fff0db" stroke="#f2c894" stroke-width="4"/><path d="M100 80 v-10" stroke="#6a4a3a" stroke-width="3"/><circle cx="100" cy="55" r="30" fill="#ffe28a" class="glow"/><g class="flame"><path d="M100 30 C85 50 88 70 100 72 C112 70 115 50 100 30Z" fill="#ffc94a"/><path d="M100 45 C93 58 95 68 100 68 C105 68 107 58 100 45Z" fill="#ff9a4a"/></g>${FACE(100,120,.8)}`,
+tree:`<ellipse cx="100" cy="172" rx="60" ry="8" fill="#d7ecd0"/><rect x="88" y="115" width="24" height="57" rx="8" fill="#c89a73"/><g class="sway"><circle cx="100" cy="80" r="50" fill="#9fd89f"/><circle cx="65" cy="100" r="30" fill="#8fd18f"/><circle cx="135" cy="100" r="30" fill="#8fd18f"/><circle cx="75" cy="60" r="7" fill="#ff9ec4"/><circle cx="130" cy="65" r="7" fill="#ff9ec4"/><circle cx="110" cy="40" r="6" fill="#ff9ec4"/>${FACE(100,90,.9)}</g>`,
+star:`<path class="beat" d="M100 25 L120 75 L174 78 L132 112 L146 165 L100 136 L54 165 L68 112 L26 78 L80 75Z" fill="#ffe28a" stroke="#f5c542" stroke-width="5" stroke-linejoin="round"/>${FACE(100,103,.9)}`,
+bee:`<defs><clipPath id="beeclip"><ellipse cx="100" cy="115" rx="55" ry="45"/></clipPath></defs><g class="flap"><ellipse cx="80" cy="65" rx="25" ry="32" fill="#e6f5ff" opacity=".9" stroke="#bfe0f7" stroke-width="3"/><ellipse cx="120" cy="65" rx="25" ry="32" fill="#e6f5ff" opacity=".9" stroke="#bfe0f7" stroke-width="3"/></g><ellipse cx="100" cy="115" rx="55" ry="45" fill="#ffd86b"/><g clip-path="url(#beeclip)" fill="#8a6a4a" opacity=".8"><rect x="62" y="60" width="12" height="120"/><rect x="126" y="60" width="12" height="120"/></g>${FACE(100,112,.9)}<path d="M155 118 l12 0" stroke="#6a4a3a" stroke-width="6" stroke-linecap="round"/>`,
+snail:`<ellipse cx="100" cy="165" rx="75" ry="8" fill="#d7ecd0"/><path d="M30 160 q0 -30 30 -30 h90 q20 0 20 30z" fill="#ffe0b8"/><path d="M50 132 v-35 M62 132 v-38" stroke="#ffd09a" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="96" r="5" fill="#8a6040"/><circle cx="62" cy="92" r="5" fill="#8a6040"/><circle cx="118" cy="110" r="45" fill="#f5b3c8" stroke="#e8859e" stroke-width="4"/><path d="M118 110 m-30 0 a30 30 0 1 1 30 30 a20 20 0 1 1 -18 -24 a10 10 0 1 1 12 10" fill="none" stroke="#e8859e" stroke-width="4"/>${FACE(55,145,.5)}`,
+hands:`<circle cx="100" cy="95" r="62" fill="#fff1b8" class="glow"/><path d="M100 60 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z" fill="#ffd36e" class="twinkle"/><path d="M40 170 C35 140 45 115 60 100 C66 94 74 98 72 106 L68 124 C80 110 92 112 96 124 L98 170Z" fill="#ffd9c2" stroke="#f0a988" stroke-width="4" stroke-linejoin="round"/><path d="M160 170 C165 140 155 115 140 100 C134 94 126 98 128 106 L132 124 C120 110 108 112 104 124 L102 170Z" fill="#ffd9c2" stroke="#f0a988" stroke-width="4" stroke-linejoin="round"/><circle cx="72" cy="145" r="7" fill="#ffb3c7" opacity=".8"/><circle cx="128" cy="145" r="7" fill="#ffb3c7" opacity=".8"/><path d="M92 112 C92 100 108 100 108 112 C108 122 100 126 100 130 C100 126 92 122 92 112Z" fill="#ff9fb2"/>`,
+aura:`<circle cx="100" cy="100" r="78" fill="#e6dbff" class="glow"/><circle cx="100" cy="100" r="62" fill="#f3ecff" opacity=".9"/><circle cx="100" cy="100" r="46" fill="#fff" opacity=".9"/><circle cx="100" cy="80" r="16" fill="#ffd9c2"/><path d="M70 140 C70 110 130 110 130 140 Q100 150 70 140Z" fill="#c5b3f5"/><circle cx="100" cy="122" r="6" fill="#ff9fb2" class="twinkle"/><g transform="translate(100 80) scale(.4)"><circle cx="-14" cy="0" r="5" fill="#5a3a3a"/><circle cx="14" cy="0" r="5" fill="#5a3a3a"/><path d="M-8 10 Q0 17 8 10" stroke="#5a3a3a" stroke-width="4" fill="none"/></g>`,
+earth:`<circle cx="100" cy="102" r="62" fill="#a8dcff" stroke="#80bfe8" stroke-width="4"/><path d="M60 70 q15 -12 30 -2 q8 14 -6 22 q-14 4 -12 18 q-12 4 -18 -10 q-6 -16 6 -28z M120 60 q20 4 28 22 q-10 6 -20 0 q-12 -6 -8 -22z M110 130 q18 -8 30 4 q-6 18 -24 18 q-12 -8 -6 -22z" fill="#9fd89f"/>${FACE(100,108,.85)}<path class="beat" d="M100 40 C88 28 72 36 78 50 C82 58 100 66 100 66 C100 66 118 58 122 50 C128 36 112 28 100 40Z" fill="#ff9fb2" stroke="#f47c96" stroke-width="3" transform="translate(0 -18)"/>`,
+sunrise:`<rect x="20" y="30" width="160" height="140" rx="30" fill="#ffe7d6"/><g class="spin" style="transform-origin:100px 130px"><g fill="#ffcf5c">${[-60,-30,0,30,60].map(a=>`<path transform="rotate(${a} 100 130)" d="M100 52 l8 22 h-16z"/>`).join('')}</g></g><path d="M50 130 a50 50 0 0 1 100 0z" fill="#ffd36e"/>${FACE(100,112,.75)}<path d="M20 130 h160 v10 a30 30 0 0 1 -30 30 h-100 a30 30 0 0 1 -30 -30z" fill="#ffc2d1"/><path d="M45 150 q15 -8 30 0 M110 152 q15 -8 30 0" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>`,
+beads:`<g class="float2">${Array.from({length:18},(_,i)=>{const t=i/18*Math.PI*2;return `<circle cx="${100+55*Math.cos(t)}" cy="${90+55*Math.sin(t)}" r="10" fill="${['#c5b3f5','#ffb7c9','#ffe28a'][i%3]}" stroke="#fff" stroke-width="2"/>`}).join('')}</g><path d="M100 145 v20" stroke="#c89a73" stroke-width="5"/><path d="M92 160 h16 l-4 20 h-8z" fill="#f7a8c0"/><circle cx="100" cy="145" r="12" fill="#f5c542" stroke="#fff" stroke-width="2"/>${FACE(100,90,.8)}`,
+};
+
+const BUDDHA = [
+["lotus", "A Calm Breath", "“Breathing in, I calm my body. Breathing out, I smile.”", "Take three slow breaths and smile softly.", "Thich Nhat Hanh"],
+["lotus", "No Mud, No Lotus", "“No mud, no lotus.” Even hard days can help something lovely grow.", "Think of one good thing that came from a hard time.", "Thich Nhat Hanh"],
+["sunrise", "A Smile Is Enough", "“Sometimes your joy is the source of your smile, but sometimes your smile can be the source of your joy.”", "Smile gently for three breaths.", "Thich Nhat Hanh"],
+["sunrise", "A Brand New Day", "“Waking up this morning, I smile. Twenty-four brand new hours are before me.”", "Smile softly as soon as you wake up.", "Thich Nhat Hanh"],
+["earth", "Steady as a Rock", "“As a solid rock is not shaken by the wind, so the wise are not shaken by praise or blame.”", "Breathe slowly and feel calm and steady inside.", "The Dhammapada"],
+["flower", "Right Here", "“The present moment is filled with joy and happiness. If you are attentive, you will see it.”", "Look around and find one small joy right now.", "Thich Nhat Hanh"],
+["cloud", "Clouds Pass By", "“Feelings come and go like clouds in a windy sky. Conscious breathing is my anchor.”", "Look up at the sky and let one worry drift by.", "Thich Nhat Hanh"],
+["snail", "Slow Is Good", "“Smile, breathe and go slowly.”", "Do one thing today a little more slowly.", "Thich Nhat Hanh"],
+["star", "Everything Is Possible", "“Because you are alive, everything is possible.”", "Say to yourself: I am alive, and that is wonderful.", "Thich Nhat Hanh"],
+["heart", "Love Heals", "“Hatred does not cease by hatred, but only by love; this is the eternal rule.”", "Send a kind thought to someone you know.", "The Dhammapada"],
+["beads", "Real Treasure", "“Health is the greatest gift, contentment the greatest wealth.”", "Name one thing you have that makes you content.", "The Dhammapada"],
+["lotus", "The Heart of the Teaching", "“Avoid all evil, cultivate good, and purify your mind: this is the teaching of the Buddhas.”", "Think one good, pure thought today.", "The Dhammapada"],
+["bird", "Words of Peace", "“Better than a thousand hollow words is one word that brings peace.”", "Say one gentle, kind word to someone today.", "The Dhammapada"],
+["heart", "Kindness Wins", "“Overcome anger with kindness.” A soft heart is a strong heart.", "If you feel cross today, breathe and soften.", "The Dhammapada"],
+["heart", "Love for All", "“Let one cultivate a boundless love towards all beings.”", "Wish a bird, a plant or a person well today.", "The Buddha, Metta Sutta"],
+["sky", "You Are the Sky", "“You are the sky. Everything else — it's just the weather.”", "When a worry comes, picture a wide blue sky.", "Pema Chödrön"],
+["butterfly", "Letting Go", "“If you let go a little, you will have a little peace. If you let go a lot, you will have a lot of peace.”", "Let go of one small worry today.", "Ajahn Chah"],
+["leaf", "Beginner's Mind", "“In the beginner's mind there are many possibilities.” Every day you can see the world fresh.", "Look at something ordinary as if for the first time.", "Shunryu Suzuki"],
+["heart", "Always Possible", "“Be kind whenever possible. It is always possible.”", "Do one kind thing for yourself or another.", "The Dalai Lama"],
+["sun", "Happiness Grows", "“If you want others to be happy, practice compassion. If you want to be happy, practice compassion.”", "Think warmly of someone who is having a hard time.", "The Dalai Lama"],
+["lotus", "A Peaceful Heart", "Peace is not far away. It lives quietly inside your own heart.", "Place a hand on your heart and breathe gently."],
+["candle", "One Little Light", "One candle can light many others and never grow smaller. Your kindness is like that.", "Share a smile with someone today."],
+["tree", "Deep Roots", "A tree with deep roots stands calm in the wind. Your years have given you deep roots.", "Stand or sit tall and feel steady."],
+["moon", "The Quiet Moon", "The moon does not hurry, yet it always shines. You can be gentle and still shine.", "Look for the moon tonight if you can."],
+["flower", "Bloom in Your Time", "Every flower opens in its own season. There is no rush.", "Be patient with yourself today."],
+["turtle", "Steady Turtle", "Slow and steady is a fine way to go. Each gentle moment is enough.", "Take one peaceful breath before each thing you do today."],
+["cloud", "Thoughts Are Clouds", "Thoughts drift in and drift out. You do not have to hold on to them.", "Let one thought float away like a cloud."],
+["lotus", "This Moment", "This moment is the only one we truly have. It is enough.", "Notice three sounds around you right now."],
+["sun", "Simple Joys", "Happiness is often in small things: a kind word, a bird's song, a sunny sky.", "Find one simple joy and enjoy it fully."],
+["bird", "Morning Song", "The birds do not worry about tomorrow. They sing for today.", "Listen for a bird or hum a little tune."],
+["heart", "Be Kind to You", "You deserve the same kindness you give to others.", "Say something kind to yourself in the mirror."],
+["moon", "The Calm Pond", "When a pond is calm, you can see the moon in it. When the mind is calm, we see clearly too.", "Sit quietly for one minute and just breathe."],
+["sun", "Gratitude", "A grateful heart is a happy heart. There is always something to thank.", "Name three things you are thankful for."],
+["leaf", "Everything Changes", "Seasons change, and spring always comes again.", "Notice something that has changed for the better."],
+["lotus", "Kind Thoughts", "Kind thoughts make a kind life. Plant them like seeds each day.", "Think one kind thought about a neighbor."],
+["candle", "Warm Glow", "Loving kindness is a warm glow you can carry anywhere.", "Wish yourself: May I be happy. May I be well."],
+["tree", "Patience", "Patience is a quiet kind of strength. Good things grow slowly.", "Wait kindly for something today."],
+["flower", "Smile Inside", "A smile is a little gift you give to the world and to yourself.", "Smile at a flower, a picture or a friend."],
+["rainbow", "After the Rain", "After every rain, the world is fresh and bright again.", "Remember a time things got better."],
+["moon", "Rest Is Wise", "Resting is not lazy. Even the moon takes time to be dark before it shines.", "Close your eyes for one peaceful moment today."],
+["heart", "Forgiving", "Forgiving lets your heart feel light. It is a gift to yourself.", "Let go of one old hurt, even just a little."],
+["butterfly", "Lightness", "Holding on tight makes us heavy. Letting go makes us light as a butterfly.", "Open your hands, palms up, and relax."],
+["lotus", "Loving Kindness", "May you be happy. May you be peaceful. May you be well.", "Say these three wishes for yourself."],
+["lotus", "Kindness for Others", "May all beings be happy. May all beings be safe.", "Say this wish for the whole world."],
+["bee", "Gentle Work", "The bee takes nectar without hurting the flower. We can live gently too.", "Do one task today in a gentle way."],
+["tree", "Being Here", "Wherever you are, be all there. That is where life is.", "Put down other thoughts and enjoy what you are doing."],
+["cloud", "Calm Mind", "A calm mind is like a quiet lake. It reflects beauty.", "Close your eyes and picture a quiet lake."],
+["sun", "Light Within", "There is a warm light inside you that no one can take away.", "Sit in a sunny spot for a few minutes."],
+["cloud", "Just This Breath", "When you breathe, just breathe. Enjoy each breath as a little gift.", "Notice five breaths, one at a time."],
+["flower", "Beauty Everywhere", "Beauty is all around us, in a leaf, a face, a cloud.", "Find one beautiful thing and look at it a while."],
+["heart", "Enough", "You do not need to do more or be more. You are enough just as you are.", "Say: I am enough."],
+["moon", "Peaceful Night", "At the end of the day, let the day go. Tomorrow is fresh.", "Tonight, think of one nice moment from today."],
+["turtle", "No Hurry", "There is no race to win. Life is for enjoying.", "Look around slowly and enjoy what you see."],
+["lotus", "Gentle Heart", "A gentle heart makes a gentle world.", "Be gentle with the next person you meet."],
+["bird", "Freedom", "Worries are like cages. Kindness to yourself opens the door.", "Picture a little bird flying free."],
+["star", "Wonder", "Look up at the night sky and feel how big and lovely the world is.", "Look at the stars or a picture of them tonight."],
+["leaf", "Leaves Let Go", "When autumn comes, leaves let go easily. Letting go can be peaceful.", "Let one thing be as it is today."],
+["sky", "Flowing River", "A river flows around stones instead of fighting them. We can be gentle like a river.", "If something is hard today, meet it with a gentle heart."],
+["sun", "Sunshine Heart", "Be like the sun. It shines on everyone the same.", "Say hello warmly to someone today."],
+["candle", "Quiet Time", "A little quiet each day helps the heart feel calm.", "Sit in silence for two minutes."],
+["heart", "Compassion", "Compassion means caring for others and for yourself when things are hard.", "Be extra gentle with yourself today."],
+["flower", "Every Day a Gift", "Each day is a gift. That is why it is called the present.", "Unwrap today with a smile."],
+["tree", "Strong and Soft", "A willow bends in the wind and does not break. Soft can be strong.", "Breathe gently and let your heart feel soft like a willow."],
+["lotus", "Rising Up", "The lotus grows up through the mud into a lovely flower. You rise too.", "Think of how far you have come in life."],
+["bird", "Kind Speech", "Speak kindly, and kind words come back to you.", "Give someone a compliment today."],
+["cloud", "Just Watching", "You can watch your worries like watching clouds, from a calm place.", "Notice a worry, then say: that is just a thought."],
+["moon", "Soft Light", "Even a little light is enough to find your way.", "Keep a soft light on in the evening."],
+["rainbow", "Colors of Life", "Life has many colors: happy, sad, calm. All are part of the rainbow.", "Name one color you see and enjoy it."],
+["heart", "Loving Yourself", "Loving yourself is the first step to loving the world.", "Hug yourself gently with both arms."],
+["moon", "Nothing Else", "When you rest, just rest. Let your heart be quiet.", "Enjoy a quiet moment without doing anything."],
+["sun", "Good Morning, World", "Greet each morning like an old friend.", "Say good morning out loud to the day."],
+["leaf", "Simple Living", "A simple life can be a rich life. Less can be more.", "Enjoy one simple thing today."],
+["lotus", "Awake", "To be awake is to notice life as it happens.", "Notice the air on your skin right now."],
+["butterfly", "Change Is Natural", "A caterpillar becomes a butterfly. Change can bring beautiful things.", "Welcome one little change today."],
+["star", "Your Good Heart", "Your good heart has touched many lives.", "Remember someone you helped long ago."],
+["candle", "Share Your Light", "Sharing your warmth makes your light grow brighter.", "Call or write to someone you love."],
+["tree", "Belonging", "You are part of this world, like a tree is part of a forest.", "Feel yourself as part of something big and kind."],
+["lotus", "Everyday Mindfulness", "Any ordinary moment can become peaceful when we pay gentle attention.", "Pay loving attention to one ordinary moment."],
+["flower", "Kind Eyes", "See others with kind eyes, and the world feels softer.", "Look at someone today with warm, kind eyes."],
+["heart", "Heart Wide Open", "An open heart has room for everyone.", "Think of someone and wish them well."],
+["moon", "Letting the Day Go", "Each night we can put down the day, like setting down a heavy bag.", "Tonight, breathe out slowly three times and let the day go."],
+["sun", "Warm Kindness", "Kindness is like sunshine. It warms everyone it touches.", "Hold a door or say thank you with a smile."],
+["lotus", "Peace Begins With Me", "Peace in the world begins with peace in my own heart.", "Say softly: may I be peaceful."],
+["bird", "Listening", "Listening kindly is one of the greatest gifts we can give.", "Listen to someone today without hurrying."],
+["cloud", "Soft Sky", "The sky holds every cloud and every storm, and stays wide and calm.", "Take a deep breath and feel roomy inside."],
+["turtle", "At Home Inside", "A turtle carries its home. You can carry calm with you everywhere.", "Take one calm breath wherever you are."],
+["leaf", "Nature's Friend", "Nature is a kind teacher. It is always there to calm us.", "Touch a plant or look at a tree today."],
+["heart", "Time With a Friend", "Sharing a quiet moment with a friend is sharing peace.", "Share a kind word with a friend, even on the phone."],
+["star", "Tiny Miracles", "Every breath, every heartbeat is a small miracle.", "Feel your heartbeat for a moment."],
+["heart", "Friendly Heart", "“Happily we live, friendly among those who are unfriendly.”", "Send a friendly thought to someone difficult.", "The Dhammapada"],
+["flower", "Planting Seeds", "Kind words and good deeds are seeds. They grow into happiness.", "Plant one seed of kindness today."],
+["sun", "Joy Is Near", "Joy is not far away. It is often right in front of us.", "Notice something that makes you smile."],
+["moon", "Dreams", "Rest your mind and let sweet dreams come.", "Think of a happy memory as you drift off tonight."],
+["lotus", "The Middle Way", "Not too much, not too little. A gentle balance is best.", "Be gentle and balanced in your thoughts today."],
+["cloud", "Clear Mind", "A snow globe settles when we let it sit still. So does a busy mind.", "Sit still for a moment and let your mind settle."],
+["butterfly", "Light Heart", "A light heart makes the day feel easy.", "Laugh at something small today."],
+["candle", "Hope", "Hope is a small flame that keeps us warm.", "Think of something you look forward to."],
+["tree", "Wisdom of Years", "You have lived through many seasons. That is wisdom.", "Share one piece of good advice with someone."],
+["bird", "Morning Peace", "The early morning is quiet and fresh, full of peace.", "Enjoy the morning quiet for a moment."],
+["heart", "Good Intentions", "Start each day with a kind wish, and the day follows it.", "Make a kind wish for today."],
+["cloud", "It Will Change", "Nothing stays forever, not even hard feelings. Everything moves on.", "Remember: this too will change."],
+["flower", "Gentle Growth", "We keep growing, at every age, like a garden.", "Learn one small new thing today."],
+["rainbow", "Hope After Storms", "Storms pass, and rainbows follow.", "Look for something hopeful today."],
+["sun", "Warm Welcome", "Welcome each person as a friend.", "Greet someone warmly today."],
+["lotus", "Sitting Still", "Sitting still for a moment is a gift to yourself.", "Sit comfortably and rest your hands in your lap."],
+["star", "Giving Thanks", "Every day holds gifts. Giving thanks makes the heart glad.", "Say thank you for three gifts in your life."],
+["leaf", "Soft Breeze", "A soft breeze moves the leaves without harm. Be gentle like the breeze.", "Feel fresh air on your face today."],
+["moon", "Calm Evening", "Evening is a time to slow down and be kind to yourself.", "Dim the lights a little and relax tonight."],
+["heart", "You Are Loved", "You are loved more than you know.", "Think of someone who loves you."],
+["star", "Shine Softly", "You do not have to be loud to shine. Stars shine quietly.", "Be quietly proud of yourself today."],
+["bee", "Busy and Happy", "A bee is busy but never in a rush. Keep a happy, easy pace.", "Do your chores at a relaxed pace."],
+["turtle", "Take Your Time", "Good things come to those who take their time.", "Give yourself extra time for everything today."],
+["butterfly", "Delight", "Let yourself be delighted by small things, like a child.", "Enjoy a sweet little moment today."],
+["lotus", "Kind Mind", "A kind mind is a peaceful mind.", "Replace one unkind thought with a kind one."],
+["tree", "Standing Strong", "Like an old oak, you have weathered many storms and still stand.", "Feel proud of your strength."],
+["bird", "Singing Heart", "A happy heart sings even without words.", "Hum a song you love."],
+["candle", "Evening Blessing", "May your evening be peaceful and your sleep be sweet.", "Say goodnight to your day with a smile."],
+["sun", "Fresh Start", "Every morning, you can begin again.", "Start today with one kind act."],
+["rainbow", "Gentle Rain", "Gentle rain helps everything grow. Gentle words help people grow.", "Encourage someone with a kind word."],
+["flower", "Thank You", "Saying thank you makes two hearts happy.", "Thank someone for something small."],
+["heart", "Mindful Heart", "When you pay attention with love, everything becomes special.", "Give full attention to one thing you love."],
+["lotus", "Deep Peace", "Deep peace is always there, beneath the waves, like the bottom of the sea.", "Breathe slowly and feel the calm under everything."],
+["moon", "Night Is Kind", "Night comes so we can rest. Let yourself rest well.", "Tonight, rest in one peaceful thought."],
+["lotus", "Our Thoughts", "“We are what we think. All that we are arises with our thoughts. With our thoughts we make the world.”", "Choose one happy thought to carry today.", "The Dhammapada"],
+["sun", "Happiness Follows", "“Speak or act with a pure mind and happiness will follow you as your shadow, unshakable.”", "Say one kind thing with a pure heart.", "The Dhammapada"],
+["earth", "The Greatest Victory", "“Though one conquer a thousand times a thousand men in battle, the one who conquers himself is the noblest victor.”", "Gently choose patience over irritation today.", "The Dhammapada"],
+["sunrise", "Peace, Joy and Serenity", "“Every breath we take, every step we make, can be filled with peace, joy and serenity.”", "Fill three breaths with peace.", "Thich Nhat Hanh"],
+["sun", "Only Now", "“Life is available only in the present moment.”", "Notice what is lovely about right now.", "Thich Nhat Hanh"],
+["flower", "Be Yourself", "“To be beautiful means to be yourself.”", "Say: I am lovely just as I am.", "Thich Nhat Hanh"],
+["heart", "Love's Other Name", "“Understanding is love's other name.”", "Try to understand someone a little better today.", "Thich Nhat Hanh"],
+["star", "Hope Helps", "“Hope is important because it can make the present moment less difficult to bear.”", "Hold one hopeful thought in your heart.", "Thich Nhat Hanh"],
+["heart", "Kindness Is My Religion", "“My religion is very simple. My religion is kindness.”", "Let kindness guide one choice today.", "The Dalai Lama"],
+["earth", "Love Is Needed", "“Love and compassion are necessities, not luxuries. Without them, humanity cannot survive.”", "Share a little love with someone today.", "The Dalai Lama"],
+["hands", "Between Equals", "“Compassion is not a relationship between the healer and the wounded. It's a relationship between equals.”", "See someone today as your equal and friend.", "Pema Chödrön"],
+["heart", "Include Yourself", "“If your compassion does not include yourself, it is incomplete.”", "Be as kind to yourself as to a friend.", "Jack Kornfield"],
+["butterfly", "A Mind That Lets Go", "“Do everything with a mind that lets go.”", "Do one thing today without worrying how it turns out.", "Ajahn Chah"],
+["lotus", "At Ease", "“May all beings be at ease.”", "Say this wish slowly three times.", "The Buddha, Metta Sutta"],
+["beads", "Counting Kindness", "Some people use prayer beads to count kind wishes, one bead for each blessing.", "Count ten kind wishes, one for each finger."],
+["bird", "A Gentle Voice", "A gentle voice can calm a room and soothe a heart.", "Speak softly and warmly today."],
+["moon", "Moonlight Kindness", "The moon shines on everyone without choosing. Our kindness can be like that.", "Send a kind thought to everyone you think of today."],
+["sunrise", "New Dawn", "Each dawn is a fresh page. Yesterday is done, and today is new.", "Greet the new day with a kind wish."],
+["aura", "Your Peaceful Glow", "When you are peaceful, others feel it too, like the warmth of a candle.", "Sit peacefully and let your calm glow."],
+["tree", "The Bodhi Tree", "The Buddha found peace sitting quietly under a tree. Quiet moments can bring us peace too.", "Sit quietly for a few minutes and breathe."],
+["lotus", "Awakening", "The word Buddha means 'one who is awake.' We can be awake to the beauty around us.", "Notice something beautiful you usually miss."],
+["heart", "Right Intention", "Starting with a kind intention makes everything we do gentler.", "Set a kind intention for today."],
+["bird", "Wise Speech", "The Buddha taught speaking words that are true, kind and helpful.", "Before speaking, ask: is it kind?"],
+["star", "Right Effort", "Right effort means gently growing good thoughts and letting unkind ones go.", "Grow one good thought today."],
+["candle", "Right Mindfulness", "Mindfulness is gently paying attention to this moment, with kindness.", "Pay gentle attention to your breath for a minute."],
+["lotus", "The Eightfold Path", "The Buddha taught a path of wise living: kind thoughts, kind words and kind actions.", "Choose kindness in thought, word and action."],
+["heart", "Joy for Others", "Being happy for other people's good fortune is a lovely Buddhist practice called sympathetic joy.", "Feel happy for someone's good news."],
+["cloud", "Equanimity", "Equanimity is a calm, balanced heart, steady in happy times and hard times.", "Say: Whatever comes, I can meet it calmly."],
+["lotus", "The Four Kind Hearts", "The Buddha taught four beautiful states of heart: loving-kindness, compassion, joy for others and calm balance.", "Practice one of the four today."],
+["sun", "Generosity of Spirit", "Giving is a joy. Even a smile is a precious gift.", "Give a warm smile to someone today."],
+["bee", "Gathering Goodness", "Like a bee gathering sweetness, we can gather good moments all day.", "Collect three sweet moments today."],
+["snail", "One Thing at a Time", "Doing one thing at a time, with care, brings a quiet mind.", "Do one thing today with full attention."],
+["cat", "Content Like a Cat", "A cat curled in the sun knows how to be content. Contentment is a treasure.", "Enjoy a moment of simple contentment."],
+["turtle", "Wise and Patient", "Patience grows wisdom, slowly and surely.", "Be patient with someone today."],
+["butterfly", "Impermanence", "All things change, like clouds and seasons. This helps us hold life gently.", "Hold today's worries lightly."],
+["leaf", "Interbeing", "Everything is connected: the sun, the rain, the earth and us.", "Feel connected to everything around you."],
+["flower", "A Flower Smiles", "A flower does not try to be beautiful. It just blooms. You can just be.", "Let yourself simply be for a moment."],
+["star", "Tiny Kindnesses", "The smallest kindness is never wasted.", "Do one tiny kindness today."],
+["heart", "A Soft Answer", "Answering gently can calm anger, like a cool breeze on a hot day.", "Answer gently if someone is cross today."],
+["moon", "Letting Worries Rest", "Worries can rest too. We can set them down for the night.", "Set down one worry before the evening ends."],
+["rainbow", "All Colors Welcome", "Every feeling is welcome to visit. Kindly notice it, and let it move on.", "Kindly notice one feeling and let it be."],
+["sky", "Spacious Heart", "A spacious heart, like a big sky, has room for everything.", "Breathe in and feel your heart open wide."],
+["hands", "Folded Hands", "Joining the palms together is a gentle sign of respect and peace.", "Join your palms and bow your head softly."],
+["beads", "Mantra of Peace", "Repeating a peaceful word, like 'peace' or 'calm', can settle the mind.", "Softly repeat the word 'peace' ten times."],
+["earth", "Caring for the Earth", "The Earth holds us all. We can bless it with loving thoughts.", "Send a loving wish to the whole Earth."],
+["aura", "Kind Energy", "Kind thoughts make the air around us feel warmer.", "Think warmly of everyone around you."],
+["sunrise", "Morning Intention", "In the morning, we can wish: may I be kind today.", "Say: May I be kind today."],
+["candle", "Sharing Merit", "Buddhists sometimes share the goodness of their kind acts with all beings.", "Say: May the good I do today help everyone."],
+["lotus", "Refuge", "Many Buddhists find comfort in the Buddha, the teachings and the kind community. Comfort is always near.", "Think of something that gives you comfort."],
+["heart", "Gentle Speech at Home", "Kind words at home make a peaceful home.", "Speak kindly to everyone you talk with today."],
+["bird", "The Joy of Listening", "When we listen with a quiet mind, we hear the world more clearly.", "Listen quietly to the sounds around you."],
+["tree", "Growing Wisdom", "Wisdom grows from kindness, patience and paying attention.", "Pay kind attention to something today."],
+["sun", "Warm Heart, Warm World", "When our heart is warm, the world feels warmer.", "Warm someone's heart with a kind word."],
+["cloud", "No Need to Hold", "We do not need to hold every thought. Some can simply float past.", "Let one thought float past without holding it."],
+["star", "Bright Mind", "A mind full of kindness shines like a star.", "Think of someone kindly and feel your mind brighten."],
+["moon", "Quiet Gratitude", "At day's end, a quiet thank you brings peace.", "Say thank you for one thing from today."],
+["butterfly", "Gentle Freedom", "Letting go of 'should' and 'must' brings gentle freedom.", "Let go of one 'should' today."],
+["flower", "The Smiling Buddha", "Many statues show the Buddha with a gentle smile. A gentle smile can be our practice too.", "Wear a gentle smile for a few minutes."],
+["lotus", "Just Breathing", "Sometimes the kindest thing is to simply breathe and be.", "Breathe and simply be for one minute."],
+["heart", "Loving All Ages", "Love has no age. Your love is as precious now as ever.", "Share your love with someone of any age."],
+["sunrise", "Beginning Again", "We can always begin again, with a kind heart.", "Begin again gently, whenever you need to."],
+];
+
+const PRANIC = [
+["sun", "What Is Prana?", "In Pranic Healing, prana means life energy. It is the gentle energy that keeps us alive and well.", "Take a slow breath and think: I am filled with life energy."],
+["sun", "Energy From the Sun", "Master Choa Kok Sui taught that sunlight gives us prana. A little morning sun can help you feel bright.", "Picture warm golden sunlight filling your heart."],
+["cloud", "Energy From the Air", "We also take in prana from fresh air as we breathe. Slow, deep breaths bring in more.", "Take three slow breaths of fresh air and feel thankful."],
+["tree", "Energy From the Ground", "The earth gives us ground prana too. Feeling connected to the earth helps you feel steady.", "Picture gentle roots of light joining you to the earth."],
+["butterfly", "Your Energy Body", "Pranic Healing teaches that we have an energy body, like a soft invisible glow around us. It is also called the aura.", "Picture a soft, warm glow all around you."],
+["flower", "Little Energy Wheels", "Chakras are energy centers in the energy body. You can picture them like little flowers or wheels of light.", "Picture a tiny flower of light glowing in your chest."],
+["heart", "The Heart Center", "The heart chakra, in the middle of the chest, is the center of kindness and warm feelings.", "Rest a hand on your chest and think a kind thought."],
+["star", "The Crown Center", "The crown chakra, on top of the head, is where we feel spiritual love and a connection with the Divine.", "Picture soft light shining on the top of your head."],
+["lotus", "Twin Hearts", "The Meditation on Twin Hearts uses the heart and the crown together, to feel love and to share it with the world.", "Put a hand on your heart and smile gently."],
+["lotus", "Blessing the Earth", "In the Twin Hearts meditation, we bless the whole Earth with loving-kindness, peace and joy.", "Say softly: May the Earth be blessed with peace."],
+["heart", "Loving-Kindness", "Loving-kindness means wishing good things for others, with a warm and open heart.", "Wish someone well: May you be happy."],
+["heart", "Bless Your Family", "Master Choa Kok Sui taught us to bless our loved ones often. A blessing is a loving wish sent from the heart.", "Bless each person in your family by name."],
+["heart", "Bless Your Neighbors", "We can bless our neighbors too, even people we do not know well.", "Say: May my neighbors be blessed with good health."],
+["heart", "Bless Everyone", "We can even bless people who have been difficult. This makes our own heart lighter.", "Bless one person who was difficult: May you be at peace."],
+["butterfly", "Forgiveness Frees You", "Forgiving does not mean the hurt was okay. It means you set yourself free from carrying it.", "Say: I forgive, and I let go."],
+["cloud", "Heavy Energy", "Pranic Healing teaches that old anger and hurt feel like heavy, gray energy. Forgiving helps it lift away.", "Picture a gray cloud floating away and blue sky behind it."],
+["sun", "Light Energy", "Happy, kind and grateful thoughts feel like light, bright energy.", "Think of three happy things and feel lighter."],
+["star", "Thoughts Have Energy", "Master Choa Kok Sui taught that thoughts have energy. Kind thoughts help us and others.", "Choose one kind thought and hold it for a minute."],
+["aura", "Inner Purification", "Inner purification means gently cleaning our thoughts, words and actions, like opening a curtain so the light shines in.", "Replace one grumpy thought with a kind one."],
+["flower", "Growing Virtues", "Virtues are good qualities, like kindness, patience and honesty. We grow them a little each day, like a garden.", "Pick one virtue to practice today."],
+["heart", "Generosity", "Generosity means giving: a smile, a kind word, time or a gift. Giving opens the heart.", "Give something small today: a compliment or a smile."],
+["earth", "What You Give Comes Back", "Pranic Healing teaches the law of karma: what we give, we receive. Kindness brings kindness back.", "Plant a seed of kindness today."],
+["sun", "Tongue to the Roof", "In Pranic Healing, resting the tongue on the roof of the mouth is taught to help energy flow smoothly.", "Rest your tongue gently on the roof of your mouth as you breathe."],
+["lotus", "Pranic Breathing", "Pranic breathing is slow, easy belly breathing. The belly rises gently as you breathe in and sinks softly as you breathe out.", "Take five slow belly breaths."],
+["hands", "Healing Hands", "In Pranic Healing, the hands are used to feel and share gentle energy, often without even touching.", "Hold your hands open and feel their gentle warmth."],
+["tree", "Friendly Trees", "Healthy trees give off lots of fresh energy. Sitting near trees can help you feel refreshed.", "Look at a tree and thank it for its gentle energy."],
+["hands", "The Centers of the Palms", "Pranic Healing students learn to rest their attention softly on the centers of the palms, to feel energy.", "Rest your attention on the middle of your palms for a minute."],
+["heart", "Kindness to Yourself", "Loving-kindness includes you. Bless yourself as warmly as you bless others.", "Say: May I be blessed with peace and good health."],
+["candle", "Be a Blessing", "A beautiful teaching is to be a blessing to others, bringing light wherever you go.", "Bring a little joy to someone today."],
+["star", "Gratitude Lifts Energy", "Being thankful fills the heart with light and joy.", "Name five things you are grateful for."],
+["flower", "The Virtue of Patience", "Patience is a quiet virtue. It helps our energy stay calm and steady.", "Be patient with one thing today."],
+["heart", "Humility", "Humility means staying gentle and open, always happy to learn.", "Learn one small new thing today."],
+["sun", "Cheerfulness", "Cheerfulness is a virtue too. A cheerful heart brightens your whole energy.", "Smile at three people or things today."],
+["bird", "Kind Words", "Words carry energy. Gentle, kind words make the air feel lighter.", "Say something kind to someone today."],
+["heart", "Distant Blessings", "Pranic Healing teaches that loving-kindness can be sent from the heart to bless people far away.", "Send a blessing to someone who lives far away."],
+["sun", "Open the Curtains", "Sunlight and fresh air help keep a home's energy fresh and cheerful.", "Open curtains and let the light in."],
+["leaf", "Nature Heals", "Nature is full of good energy. Plants, sky and fresh air lift the spirit.", "Spend a few minutes enjoying nature."],
+["lotus", "Quiet Meditation", "Even a few quiet minutes of meditation help calm the mind and brighten the heart.", "Sit quietly for three minutes and breathe."],
+["heart", "Loving All Beings", "We can send loving-kindness to animals, plants and every living thing.", "Bless a plant, a bird or a pet today."],
+["rainbow", "Peace for the World", "In Twin Hearts, we wish peace for every country and every person on Earth.", "Say: May the whole world be blessed with peace."],
+["heart", "Joy to Share", "We can bless others with joy, the way the sun shares its warmth.", "Send a happy wish to a friend."],
+["candle", "Divine Light", "Master Choa Kok Sui taught that we can ask for divine blessings and light for ourselves and others.", "Picture gentle golden light around someone you love."],
+["star", "Hope Is Energy", "Hope is a bright, uplifting energy. It helps us keep going.", "Think of one thing you look forward to."],
+["butterfly", "Letting Go of Worry", "Worry uses up our energy. Letting go gently gives us more energy.", "Let one worry go with a slow breath out."],
+["cloud", "Anger Can Pass", "Anger is a heavy energy. Slow breathing and kindness help it melt away.", "If you feel cross, breathe slowly and bless the person."],
+["heart", "Forgiving Yourself", "We all make mistakes. Forgiving yourself is kind and healing.", "Say: I forgive myself. I am learning."],
+["aura", "A Bright Aura", "Kind, happy thoughts help the aura feel bright and light.", "Think a joyful thought and picture your glow growing brighter."],
+["aura", "A Minute of Light", "You can picture yourself filled with soft white light, peaceful and bright.", "Picture soft white light filling you gently, all over."],
+["star", "Starting With Gratitude", "Many Pranic Healing practices begin with a thank you. Gratitude opens the heart.", "Begin today with a quiet thank you."],
+["candle", "Asking for Blessings", "Master Choa Kok Sui taught asking the Divine, in your own way, for guidance, protection and blessings.", "Ask for a blessing of guidance for today."],
+["flower", "Blessing Plants", "Plants love kind attention. You can bless them with loving thoughts.", "Bless a plant and wish it healthy growth."],
+["star", "The Golden Rule", "Treat others as you would like to be treated. This simple rule keeps our energy clean.", "Treat someone the way you'd like to be treated."],
+["heart", "Non-Injury", "Non-injury means not hurting others with actions, words or thoughts.", "Be extra gentle in what you say today."],
+["sun", "Honesty", "Honesty is a bright virtue. Being truthful keeps the heart light.", "Be kind and honest in all you say today."],
+["tree", "Steady Like a Tree", "A strong character is like a strong tree: rooted in good virtues.", "Think of one good quality you have."],
+["heart", "Kindness in Action", "Service is love in action. Small helpful acts are real blessings.", "Help someone with one small thing."],
+["bird", "Good Company", "Kind and happy people help lift our energy.", "Spend time with or call a cheerful friend."],
+["moon", "Blessing Loved Ones at Night", "Before sleep, you can bless the people you love and the whole world.", "Tonight, bless your loved ones before sleeping."],
+["sun", "Morning Blessing", "Starting the day with a blessing fills it with good energy.", "This morning, bless the day ahead."],
+["lotus", "Om", "In the Twin Hearts meditation, people softly say or think Om and rest in peaceful silence.", "Softly hum 'Om' three times."],
+["star", "Light Above", "In meditation, you can picture a gentle, brilliant light above your head, full of peace.", "Picture a soft light above you for a minute."],
+["heart", "Heart and Mind Together", "Master Choa Kok Sui taught balancing a kind heart with a clear mind.", "Make one choice today with both kindness and good sense."],
+["leaf", "Moderation", "Moderation means not too much and not too little, like a gentle middle path.", "Enjoy things in gentle amounts today."],
+["rainbow", "Many Colors of Energy", "Pranic Healing describes energy in soft colors, like light green, light blue and gentle violet.", "Look at your favorite soft color and enjoy it."],
+["heart", "Pink for Love", "Soft pink is often linked with love and tenderness.", "Wear or look at something soft pink today."],
+["cloud", "Light Blue for Calm", "Soft light blue is linked with calm and peace, like a clear sky.", "Look at the blue sky or something light blue."],
+["leaf", "Light Green for Freshness", "Soft light green reminds us of fresh leaves and new life.", "Look at a green plant and feel refreshed."],
+["sun", "Golden Light", "Golden light is linked with wisdom and blessing.", "Picture golden sunshine around your home."],
+["star", "You Are a Soul", "Master Choa Kok Sui taught that each of us is a soul, a spark of divine light.", "Say: I am a spark of divine light."],
+["heart", "Kindness and Firmness", "Master Choa Kok Sui taught that loving-kindness can be balanced with gentle firmness. Kind does not mean weak.", "Say one kind but honest thing today."],
+["heart", "The Heart Softens Feelings", "Pranic Healing teaches that a loving heart helps soften strong feelings like anger and fear.", "When a strong feeling comes, think of someone you love."],
+["star", "The Center of Clear Thinking", "The ajna chakra, between the eyebrows, is linked with clear thinking and good choices.", "Picture a soft light between your eyebrows and think clearly."],
+["bird", "The Throat Center", "The throat chakra is linked with speaking and creating. Kind words are a gift from this center.", "Speak one creative, kind sentence today."],
+["lotus", "Om Mani Padme Hum", "Master Choa Kok Sui wrote about this ancient mantra of compassion. Its sound is soft and soothing.", "Softly say 'Om Mani Padme Hum' three times."],
+["lotus", "Peace Within", "When the heart is peaceful, the energy around us feels peaceful too.", "Rest with your hands on your heart for a minute."],
+["star", "Spiritual Practice", "A little spiritual practice each day, like a prayer or blessing, keeps the heart bright.", "Say a short prayer or blessing today."],
+["candle", "Light a Candle of Love", "You can picture your heart as a warm candle sharing light with others.", "Picture your heart glowing like a candle."],
+["heart", "Loving Your Enemies", "Master Choa Kok Sui encouraged blessing even those who hurt us. It frees our own heart.", "Send a blessing to someone you have struggled with."],
+["flower", "Good Thoughts Grow", "Kind thoughts are like seeds. Tend them with love and they bloom.", "Think a kind thought about yourself."],
+["sun", "Smile Energy", "A smile is a small blessing you give to everyone around you.", "Smile warmly at the next person you see."],
+["bird", "Speak Blessings", "Instead of complaining, we can speak blessings. It changes how the day feels.", "Turn one complaint into a thank you."],
+["heart", "Kind Heart, Clear Mind", "A kind heart helps you care. A clear mind helps you choose wisely.", "Pause before you speak and choose kind words."],
+["beads", "Tithing", "Master Choa Kok Sui taught tithing, giving a little of what we have to good causes. Giving helps blessings flow.", "Think of a small way to give to a good cause."],
+["heart", "Giving Time", "Giving your time and attention is a precious gift.", "Give someone your full attention today."],
+["star", "Abundance", "Generosity opens the door to abundance. Giving and receiving flow together.", "Share something you have plenty of."],
+["aura", "Clear Like Crystal", "A pure heart is clear like crystal. Kind thoughts keep it clear.", "Think one clear, kind thought."],
+["cloud", "Watch Your Thoughts", "Inner purification begins with noticing our thoughts, gently and without judging.", "Notice your thoughts for one minute, kindly."],
+["butterfly", "Small Changes", "Inner growth happens in small steps, like a caterpillar becoming a butterfly.", "Make one tiny good change today."],
+["tree", "Character Building", "Master Choa Kok Sui taught that building good character is part of spiritual growth.", "Do one thing today that you are proud of."],
+["heart", "Caring Compassion", "Compassion is caring about others' pain and wishing to help.", "Send a caring thought to someone who is unwell."],
+["lotus", "Loving Presence", "Just being with someone kindly is a healing gift.", "Sit with someone and simply enjoy their company."],
+["sun", "Positive Energy", "Pranic Healing teaches that positive feelings like joy and hope brighten the energy body.", "Do something today that brings you joy."],
+["flower", "A Garden of Virtues", "Kindness, patience and generosity are flowers in the garden of your heart.", "Name the flowers in your heart's garden."],
+["candle", "Prayer Is Energy", "A sincere prayer or blessing sends out good energy.", "Say a heartfelt prayer for someone."],
+["star", "The Great Invocation", "The Twin Hearts meditation often begins with a prayer called the Great Invocation, asking for light and love for the world.", "Ask for light and love for the world in your own words."],
+["lotus", "Thank You at the End", "Twin Hearts ends with giving thanks. Gratitude seals the blessing.", "End today by saying thank you."],
+["heart", "Sharing Is Healing", "When we bless others with love, our own heart feels filled up too.", "Bless three people today and notice how you feel."],
+["moon", "Calm Mind, Calm Energy", "A calm mind helps the energy body feel smooth and peaceful.", "Sit quietly and let your mind settle."],
+["cloud", "Clearing Stress", "Stress can feel like tangled energy. Slow breaths and a blessing help smooth it.", "Take three slow breaths and bless yourself."],
+["tree", "Grounded and Calm", "Feeling connected to the ground helps you feel safe and calm.", "Breathe slowly and feel held by the earth."],
+["butterfly", "Lightness of Being", "Letting go of resentment makes us feel light as a butterfly.", "Let go of one old grudge today."],
+["heart", "Kindness Every Day", "Practicing kindness every day is a simple, powerful spiritual path.", "Do one kind act today."],
+["bird", "Good News", "Sharing good news spreads light energy.", "Share one piece of good news with someone."],
+["sun", "Joyful Energy", "Joy is healing. Laughing and enjoying life lift the whole energy body.", "Laugh at something funny today."],
+["earth", "Blessing Your Town", "You can bless your whole town or city with peace and goodwill.", "Bless the town where you live."],
+["aura", "Good Thoughts, Light Aura", "Just as we keep a home bright, we can keep the aura bright with good thoughts.", "Replace one heavy thought with a light one."],
+["flower", "Flowers Bring Joy", "Fresh flowers bring beauty and cheerful energy to a room.", "Put a flower or plant where you can see it."],
+["heart", "Heart Opening", "When we are kind, the heart center opens like a flower in the sun.", "Do one warm, loving thing today."],
+["star", "Wisdom", "Wisdom is using what we know with kindness.", "Share one piece of wisdom with someone younger."],
+["candle", "Inner Light", "Every person has an inner light. Kindness helps it shine brighter.", "Notice the good in someone today."],
+["heart", "Seeing the Good", "Looking for the good in others lifts both of you.", "Find one good thing about each person you meet."],
+["cloud", "Releasing Sadness", "Sadness can be released gently, like breathing out a gray cloud.", "Breathe out slowly and let a little sadness go."],
+["sun", "Welcoming Joy", "Breathing in, we can welcome joy and light.", "Breathe in and think: I welcome joy."],
+["lotus", "Silence", "Silence gives the mind and heart a gentle rest.", "Enjoy two minutes of silence."],
+["heart", "Kind Deeds Count", "No kind deed is too small. Each one is a blessing.", "Do something small and kind without being asked."],
+["tree", "Deep Roots of Faith", "Faith and trust help us stay steady in hard times.", "Think of something you trust in deeply."],
+["star", "Right Speech", "Speaking truthfully and kindly keeps our energy clean and bright.", "Speak only kind words for one hour."],
+["heart", "Right Action", "Doing good things for the right reasons brings peace to the heart.", "Do one good thing just because it is good."],
+["cloud", "Peaceful Thoughts", "Peaceful thoughts make a peaceful energy body.", "Think of a peaceful place and rest there."],
+["hands", "Hands of Blessing", "You can hold your hands open and send a blessing from your heart through them.", "Open your hands and send a blessing to the world."],
+["heart", "Kindness Toward Animals", "Loving-kindness includes animals. Kindness to animals brightens the heart.", "Bless an animal you see today."],
+["flower", "Beauty and Energy", "Beautiful things, like art and music, uplift our energy.", "Enjoy some music or a lovely picture."],
+["sun", "Good Morning Prana", "Morning air and light are especially fresh and full of energy.", "Enjoy the morning air for a moment."],
+["sunrise", "The Rising Light", "Each sunrise reminds us that light always returns, inside and out.", "Think of the morning sun rising in your heart."],
+["lotus", "The Healing Heart", "A loving heart is a healing heart, for yourself and for others.", "Send love from your heart to someone who needs it."],
+["heart", "Let Love Flow", "Love grows when we share it. The more we give, the more we have.", "Share your love with someone today."],
+["star", "Blessing Strangers", "You can bless people you pass on the street or see on TV.", "Silently bless a stranger today."],
+["rainbow", "Blessing After Storms", "After hard news, we can send blessings of peace and comfort.", "Send a blessing of comfort to people in need."],
+["moon", "Gentle Night", "Blessing the world at night brings a peaceful sleep.", "Bless the whole world before sleeping tonight."],
+["heart", "You Are a Channel", "Master Choa Kok Sui taught that we can be channels of divine love, like a window letting the sunlight through.", "Say: May I be a channel of love and kindness."],
+["sun", "Radiate Kindness", "Imagine kindness shining out of you like sunshine.", "Picture kindness shining from your heart."],
+["flower", "Tenderness", "Tenderness is soft, gentle love. It heals hearts.", "Be tender with yourself and others today."],
+["tree", "Strength and Softness", "A good heart can be strong and soft at the same time.", "Stand up for kindness today, gently."],
+["heart", "Loving Words for Yourself", "Speaking kindly to yourself helps your energy feel warm.", "Tell yourself: I am loved."],
+["star", "Every Day Is Practice", "Spiritual growth is a daily practice, not a race.", "Practice one virtue today, just a little."],
+["bird", "Joy of Giving", "Giving brings a special kind of joy that stays with us.", "Give a small gift or a kind note."],
+["lotus", "Peace Is Possible", "Peace starts inside each person and spreads outward.", "Say: Peace begins with me."],
+["heart", "Blessing With Your Eyes", "Looking at others with kind eyes blesses them.", "Look at someone with warm, kind eyes today."],
+["candle", "Warmth for Others", "Our kindness can warm others like a cozy fire.", "Warm someone's day with a kind word."],
+["cloud", "Soft Breath", "Slow, soft breathing helps calm the energy body.", "Breathe softly and slowly for one minute."],
+["sun", "Kindness Is Strength", "Being kind takes real strength and courage.", "Choose kindness in a hard moment."],
+["butterfly", "New Beginnings", "Every day is a new chance to grow in kindness.", "Start fresh today with one kind act."],
+["heart", "Love Heals Hearts", "Love is the most healing energy of all.", "Send love to someone whose heart is sad."],
+["tree", "Blessing Your Home", "You can bless your home with peace, harmony and joy.", "Picture each room of your home filled with soft light."],
+["flower", "Harmony", "Harmony means living peacefully with others and with ourselves.", "Bring harmony by being gentle today."],
+["star", "Shining Example", "Your good example lights the way for others.", "Show kindness where someone can see it."],
+["lotus", "Deep Peace Meditation", "Resting in peaceful silence after blessing is a lovely part of Twin Hearts.", "After a blessing, sit in silence for a minute."],
+["heart", "Thankful Heart", "A thankful heart is a happy heart.", "Thank three people today."],
+["sunrise", "Pure Intentions", "Good intentions are like fresh morning light. They make our actions pure.", "Start today with a good intention."],
+["beads", "Daily Practice", "Master Choa Kok Sui encouraged a little spiritual practice every day, like a blessing, a prayer or meditation.", "Choose one small spiritual practice for today."],
+["cloud", "Let Negative Thoughts Pass", "When a negative thought comes, let it pass like a cloud and think of something kind.", "Change one negative thought into a blessing."],
+["heart", "Bless Your Friends", "Bless your friends with good health, joy and peace.", "Bless one friend by name."],
+["bird", "Happiness Is Contagious", "Your happiness can spread to others, like a bird's song.", "Share a happy moment with someone."],
+["tree", "Patience With Growth", "Trees grow slowly but strongly. So does the spirit.", "Be patient with your own growth."],
+["star", "Kindness Lasts", "Kind acts leave good energy that lasts a long time.", "Remember a kind act someone did for you."],
+["heart", "Gentle Forgiveness", "Forgiveness can happen little by little. That is okay.", "Forgive just a little bit today."],
+["flower", "Blossoming", "Every day you can blossom a little more in kindness.", "Do something that makes your heart bloom."],
+["sun", "Radiant Heart", "A loving heart shines like the sun, warming everyone around.", "Picture your heart as a bright, gentle sun."],
+["lotus", "Purity of Heart", "A pure heart is like a lotus flower: clean, gentle and beautiful.", "Think a pure, loving thought."],
+["candle", "Blessing the Sick", "We can bless people who are unwell with comfort and healing.", "Send a gentle blessing to someone who is ill."],
+["heart", "Loving Without Conditions", "True love gives without asking for anything back.", "Do something kind and expect nothing back."],
+["moon", "Restful Energy", "Calm evenings help the energy body rest and refresh.", "Enjoy a quiet, calm evening."],
+["sun", "Brighten Someone's Day", "You can bless someone just by making their day a little brighter.", "Brighten someone's day with a call or smile."],
+["star", "Daily Blessings", "Blessing others every day makes blessings a happy habit.", "Give three blessings today."],
+["heart", "Gentle Heart, Gentle World", "When many hearts are gentle, the whole world becomes gentler.", "Be gentle in everything you do today."],
+["lotus", "Twin Hearts Every Day", "Many people enjoy Twin Hearts often. Even a small daily blessing is a wonderful start.", "Bless the Earth for one minute today."],
+["heart", "Kindness Toward Neighbors", "A friendly wave to a neighbor sends out warm, happy energy.", "Wave or say hello to a neighbor."],
+["sun", "Energy of Hope", "Hopeful thoughts are bright and light. They lift the heart gently.", "Say: Good things are coming."],
+["flower", "Soft Heart Energy", "A soft, open heart feels warm and welcoming to others.", "Welcome someone warmly today."],
+["tree", "Bless the Trees", "Trees give us fresh air and energy. We can thank and bless them.", "Thank a tree for its fresh air."],
+["earth", "Bless the Waters", "In Twin Hearts, we can bless the oceans, rivers, mountains and forests of the whole Earth.", "Bless the oceans and forests with peace."],
+["bird", "Bless the Animals", "We can bless all the animals of the world with safety and peace.", "Bless all the birds and animals today."],
+["star", "Wishing Well for All", "Wishing well for everyone, near and far, makes the heart feel big and kind.", "Wish well for everyone in your town."],
+["rainbow", "Unity", "We are all connected, like colors in one rainbow.", "Remember that we are all one big family."],
+["candle", "Quiet Prayer", "A quiet prayer of thanks is a lovely way to end the day.", "Say a quiet thank you tonight."],
+["lotus", "Gentle Awareness", "Being aware of our feelings helps us choose kindness.", "Notice how you feel, and choose a kind thought."],
+["heart", "Loving Memories", "Remembering loved ones with gratitude sends them loving energy.", "Think of a loved one with a thankful heart."],
+["sun", "Gift of Each Day", "Each day is a blessing. We can bless it back with joy.", "Say: Thank you for this day."],
+["butterfly", "Gentle Changes Within", "As we practice virtues, we change inside, softly and beautifully.", "Notice one way you have grown kinder."],
+["cloud", "Calm After Upset", "After feeling upset, slow breaths and a blessing help energy settle.", "If upset, breathe slowly and bless the moment."],
+["heart", "Heart of Service", "Helping others, even in tiny ways, is a joyful spiritual practice.", "Offer to help someone today."],
+["flower", "Kindness Blooms", "Kindness shared today may bloom in someone's life tomorrow.", "Share a kindness and let it bloom."],
+["moon", "Peaceful Heart at Night", "Letting go of the day's worries before sleep brings rest to the energy body.", "Let go of today's worries tonight."],
+["star", "Keep Learning", "Master Choa Kok Sui loved learning. At every age, we can learn something new and good.", "Learn one new, happy fact today."],
+];
+
+const PHOTOS = [{"src":"IMG_1964.jpg","date":"2014-12-24","w":1200,"h":900},{"src":"IMG_6317.jpg","date":"2015-07-18","w":900,"h":1200},{"src":"IMG_8713.jpg","date":"2017-07-15","w":1200,"h":902},{"src":"IMG_0721.jpg","date":"2017-10-29","w":1200,"h":900},{"src":"IMG_0723.jpg","date":"2017-10-29","w":1200,"h":900},{"src":"IMG_0724.jpg","date":"2017-10-29","w":1200,"h":900},{"src":"IMG_0725.jpg","date":"2017-10-29","w":1200,"h":900},{"src":"IMG_0726.jpg","date":"2017-10-29","w":1200,"h":900},{"src":"IMG_0197.jpg","date":"2018-03-25","w":1200,"h":900},{"src":"IMG_2820.jpg","date":"2018-08-27","w":900,"h":1200},{"src":"IMG_2829.jpg","date":"2018-08-28","w":900,"h":1200},{"src":"IMG_2835.jpg","date":"2018-08-28","w":900,"h":1200},{"src":"IMG_2836.jpg","date":"2018-08-28","w":900,"h":1200},{"src":"IMG_2838.jpg","date":"2018-08-28","w":900,"h":1200},{"src":"IMG_2845.jpg","date":"2018-08-28","w":1200,"h":900},{"src":"IMG_2855.jpg","date":"2018-08-28","w":900,"h":1200},{"src":"IMG_6335.jpg","date":"2019-07-20","w":1200,"h":900},{"src":"IMG_3092.jpg","date":"2019-08-10","w":1200,"h":902},{"src":"IMG_6542.jpg","date":"2019-08-10","w":900,"h":1200},{"src":"IMG_9744.jpg","date":"2021-07-10","w":1200,"h":900},{"src":"IMG_9930.jpg","date":"2021-07-17","w":900,"h":1200},{"src":"IMG_9932.jpg","date":"2021-07-17","w":900,"h":1200},{"src":"IMG_3102.jpg","date":"2021-11-07","w":900,"h":1200},{"src":"IMG_4105.jpg","date":"2022-08-13","w":901,"h":1200},{"src":"IMG_1831.jpg","date":"2022-10-28","w":1200,"h":900},{"src":"IMG_1834.jpg","date":"2022-10-28","w":1200,"h":900},{"src":"IMG_1839.jpg","date":"2022-10-28","w":1200,"h":900},{"src":"IMG_1846.jpg","date":"2022-10-28","w":900,"h":1200},{"src":"IMG_2500.jpg","date":"2022-11-24","w":1200,"h":900},{"src":"IMG_2501.jpg","date":"2022-11-24","w":1200,"h":900},{"src":"IMG_2506.jpg","date":"2022-11-24","w":1200,"h":900},{"src":"IMG_3825.jpg","date":"2023-01-22","w":1200,"h":900},{"src":"IMG_5250.jpg","date":"2023-01-22","w":900,"h":1200},{"src":"IMG_5252.jpg","date":"2023-01-22","w":900,"h":1200},{"src":"IMG_9882.jpg","date":"2023-05-06","w":1200,"h":900},{"src":"IMG_9884.jpg","date":"2023-05-06","w":1200,"h":900},{"src":"IMG_9886.jpg","date":"2023-05-06","w":1200,"h":900},{"src":"IMG_9888.jpg","date":"2023-05-06","w":900,"h":1200},{"src":"IMG_1056.jpg","date":"2024-01-22","w":1200,"h":900},{"src":"IMG_2438.jpg","date":"2025-01-31","w":1200,"h":900},{"src":"IMG_2440.jpg","date":"2025-01-31","w":1200,"h":900},{"src":"IMG_4080.jpg","date":"2025-05-10","w":900,"h":1200},{"src":"IMG_4092.jpg","date":"2025-05-10","w":1200,"h":900},{"src":"IMG_4095.jpg","date":"2025-05-10","w":1200,"h":900},{"src":"IMG_4096.jpg","date":"2025-05-10","w":1200,"h":900},{"src":"IMG_9303.jpg","date":"2025-11-27","w":675,"h":1200},{"src":"IMG_9311.jpg","date":"2025-11-27","w":900,"h":1200},{"src":"IMG_9314.jpg","date":"2025-11-27","w":900,"h":1200},{"src":"IMG_9318.jpg","date":"2025-11-27","w":900,"h":1200},{"src":"IMG_9320.jpg","date":"2025-11-27","w":900,"h":1200},{"src":"IMG_3154.jpg","date":"2026-05-20","w":900,"h":1200},{"src":"IMG_3162.jpg","date":"2026-05-20","w":900,"h":1200},{"src":"IMG_3171.jpg","date":"2026-05-20","w":900,"h":1200},{"src":"IMG_3459.jpg","date":"2026-06-06","w":1200,"h":900},{"src":"IMG_3481.jpg","date":"2026-06-07","w":900,"h":1200},{"src":"IMG_3484.jpg","date":"2026-06-07","w":900,"h":1200},{"src":"IMG_3501.jpg","date":"2026-06-07","w":900,"h":1200},{"src":"IMG_3507.jpg","date":"2026-06-07","w":900,"h":1200},{"src":"IMG_5666.jpg","date":"2026-09-29","w":720,"h":960}];
+
+
+const KIND = {wisdom:'Gentle wisdom', pranic:'Healing light'};
+// Alternate every day: Buddhist wisdom, Pranic Healing teaching, wisdom, teaching, ...
+const ENTRIES = [];
+const mk = (e, kind) => ({kind, art:e[0], title:e[1], text:e[2], step:e[3], by:e[4]||''});
+for (let i = 0; i < Math.max(BUDDHA.length, PRANIC.length); i++) {
+  if (BUDDHA[i]) ENTRIES.push(mk(BUDDHA[i], 'wisdom'));
+  if (PRANIC[i]) ENTRIES.push(mk(PRANIC[i], 'pranic'));
+}
+
+function localKey(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function dayNumber(d){ return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000); }
+// Day 1 (Sept 29, 2026) starts with the first lesson, so the teachings build gently in order.
+const START_DAY = Math.floor(Date.UTC(2026, 8, 29) / 86400000);
+function entryFor(d){ const n = ENTRIES.length; return ENTRIES[(((dayNumber(d) - START_DAY) % n) + n) % n]; }
+function greeting(h){ return h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening'; }
+
+function render(){
+  const now = new Date();
+  const e = entryFor(now);
+  document.getElementById('date').textContent = now.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  document.getElementById('greet').textContent = greeting(now.getHours()) + ', ' + NAME + ' 💛';
+  document.title = 'A Little Message for ' + NAME;
+  document.getElementById('art').innerHTML = SPARK + '<g class="floaty">' + (ART[e.art] || ART.heart) + '</g>';
+  const tag = document.getElementById('tag'); tag.textContent = KIND[e.kind]; tag.className = 'tag ' + e.kind;
+  document.getElementById('title').textContent = e.title;
+  document.getElementById('msg').textContent = e.text;
+  const by = document.getElementById('by'); by.hidden = !e.by; by.textContent = e.by ? '— ' + e.by : '';
+  document.getElementById('step').textContent = ' ' + e.step;
+  document.getElementById('foot').textContent = 'A new message arrives every morning, ' + NAME + '.';
+  // once-a-day memory
+  const key = 'daily-msg-seen', today = localKey(now);
+  let seen = null; try { seen = localStorage.getItem(key); } catch(_) {}
+  document.getElementById('note').hidden = (seen !== today);
+  try { localStorage.setItem(key, today); } catch(_) {}
+  renderPhoto(now); //PHOTO-CALL
+  renderedDay = today;
+  return e;
+}
+
+
+//PHOTO-JS-START
+// One family photo per day, cycling through all of them before repeating.
+function dayIndex(d){ return dayNumber(d) - START_DAY; }
+function renderPhoto(now){
+  const fig = document.getElementById('photo');
+  if (typeof PHOTOS === 'undefined' || !PHOTOS.length) { fig.hidden = true; return; }
+  const n = PHOTOS.length, ph = PHOTOS[((dayIndex(now) % n) + n) % n];
+  const img = document.getElementById('photoImg');
+  img.onload = () => { fig.hidden = false; };
+  img.onerror = () => { fig.hidden = true; };   // e.g. standalone copy without the photos folder
+  if (ph.w && ph.h) { img.width = ph.w; img.height = ph.h; }
+  img.src = ph.src;
+  const yr = (ph.date || '').slice(0,4);
+  document.getElementById('photoCap').firstChild.textContent = yr ? 'A happy memory from ' + yr + ' 💛' : 'A happy memory 💛';
+}
+const viewer = document.getElementById('viewer');
+document.getElementById('photoBtn').addEventListener('click', () => {
+  document.getElementById('viewerImg').src = document.getElementById('photoImg').src;
+  viewer.hidden = false; document.getElementById('viewerClose').focus();
+});
+function closeViewer(){ viewer.hidden = true; document.getElementById('photoBtn').focus(); }
+document.getElementById('viewerClose').addEventListener('click', closeViewer);
+viewer.addEventListener('click', e => { if (e.target === viewer || e.target.id === 'viewerImg') closeViewer(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !viewer.hidden) closeViewer(); });
+//PHOTO-JS-END
+
+let renderedDay = null;
+let current = render();
+
+// Read aloud (slow, gentle)
+const btn = document.getElementById('read'), label = document.getElementById('readLabel');
+if (!('speechSynthesis' in window)) { btn.hidden = true; }
+btn.addEventListener('click', () => {
+  const s = window.speechSynthesis;
+  if (s.speaking) { s.cancel(); label.textContent = 'Read aloud'; return; }
+  const e = current;
+  const text = document.getElementById('greet').textContent.replace('💛','') + '. ' + e.title + '. ' + e.text + (e.by ? ' — ' + e.by + '.' : '') + ' Today\'s little step: ' + e.step;
+  const u = new SpeechSynthesisUtterance(text.replace(/[“”]/g,''));
+  u.rate = 0.75; u.pitch = 1; u.lang = 'en-US';
+  const v = s.getVoices().find(v => /en(-|_)/i.test(v.lang) && /female|samantha|karen|moira|serena|victoria|google us english/i.test(v.name));
+  if (v) u.voice = v;
+  u.onend = u.onerror = () => { label.textContent = 'Read aloud'; };
+  label.textContent = 'Stop reading';
+  s.speak(u);
+});
+
+// If the page is left open past midnight, gently refresh to the new day's message.
+setInterval(() => { if (localKey(new Date()) !== renderedDay) current = render(); }, 60000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden && localKey(new Date()) !== renderedDay) current = render(); });
+</script>
+</body>
+</html>
