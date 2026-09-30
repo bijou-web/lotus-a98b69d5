@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="robots" content="noindex, nofollow, noimageindex">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#fff4ec">
+<meta name="robots" content="noindex, nofollow, noimageindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%8C%B8%3C/text%3E%3C/svg%3E">
 <title>A Little Message for You</title>
 <style>
@@ -520,13 +520,26 @@ for (let i = 0; i < Math.max(BUDDHA.length, PRANIC.length); i++) {
 
 function localKey(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
 function dayNumber(d){ return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000); }
-// Day 1 (Sept 29, 2026) starts with the first lesson, so the teachings build gently in order.
-const START_DAY = Math.floor(Date.UTC(2026, 8, 29) / 86400000);
-function entryFor(d){ const n = ENTRIES.length; return ENTRIES[(((dayNumber(d) - START_DAY) % n) + n) % n]; }
+// Day 0 is Wednesday, Sept 30, 2026 (first lesson + first photo). Earlier dates just show day 0.
+const START_DAY = Math.floor(Date.UTC(2026, 8, 30) / 86400000);
+function dayIndex(d){ return Math.max(0, dayNumber(d) - START_DAY); }
+function entryFor(d){ return ENTRIES[dayIndex(d) % ENTRIES.length]; }
+// Hidden test mode: ?preview=YYYY-MM-DD shows that day exactly as it would look, without touching localStorage.
+const PREVIEW = (() => {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(new URLSearchParams(location.search).get('preview') || '');
+  if (!m) return null;
+  const d = new Date(+m[1], +m[2] - 1, +m[3]);
+  return (d.getFullYear() === +m[1] && d.getMonth() === +m[2] - 1 && d.getDate() === +m[3]) ? m : null;
+})();
+function currentDate(){
+  const now = new Date();
+  if (!PREVIEW) return now;
+  return new Date(+PREVIEW[1], +PREVIEW[2] - 1, +PREVIEW[3], now.getHours(), now.getMinutes(), now.getSeconds());
+}
 function greeting(h){ return h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening'; }
 
 function render(){
-  const now = new Date();
+  const now = currentDate();
   const e = entryFor(now);
   document.getElementById('date').textContent = now.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
   document.getElementById('greet').textContent = greeting(now.getHours()) + ', ' + NAME + ' 💛';
@@ -540,9 +553,13 @@ function render(){
   document.getElementById('foot').textContent = 'A new message arrives every morning, ' + NAME + '.';
   // once-a-day memory
   const key = 'daily-msg-seen', today = localKey(now);
-  let seen = null; try { seen = localStorage.getItem(key); } catch(_) {}
-  document.getElementById('note').hidden = (seen !== today);
-  try { localStorage.setItem(key, today); } catch(_) {}
+  if (PREVIEW) {
+    document.getElementById('note').hidden = true;   // preview = first visit look; never reads or writes storage
+  } else {
+    let seen = null; try { seen = localStorage.getItem(key); } catch(_) {}
+    document.getElementById('note').hidden = (seen !== today);
+    try { localStorage.setItem(key, today); } catch(_) {}
+  }
   renderPhoto(now); //PHOTO-CALL
   renderedDay = today;
   return e;
@@ -551,11 +568,10 @@ function render(){
 
 //PHOTO-JS-START
 // One family photo per day, cycling through all of them before repeating.
-function dayIndex(d){ return dayNumber(d) - START_DAY; }
 function renderPhoto(now){
   const fig = document.getElementById('photo');
   if (typeof PHOTOS === 'undefined' || !PHOTOS.length) { fig.hidden = true; return; }
-  const n = PHOTOS.length, ph = PHOTOS[((dayIndex(now) % n) + n) % n];
+  const n = PHOTOS.length, ph = PHOTOS[dayIndex(now) % n];
   const img = document.getElementById('photoImg');
   img.onload = () => { fig.hidden = false; };
   img.onerror = () => { fig.hidden = true; };   // e.g. standalone copy without the photos folder
@@ -596,8 +612,10 @@ btn.addEventListener('click', () => {
 });
 
 // If the page is left open past midnight, gently refresh to the new day's message.
-setInterval(() => { if (localKey(new Date()) !== renderedDay) current = render(); }, 60000);
-document.addEventListener('visibilitychange', () => { if (!document.hidden && localKey(new Date()) !== renderedDay) current = render(); });
+if (!PREVIEW) {
+  setInterval(() => { if (localKey(new Date()) !== renderedDay) current = render(); }, 60000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden && localKey(new Date()) !== renderedDay) current = render(); });
+}
 </script>
 </body>
 </html>
