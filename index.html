@@ -86,7 +86,7 @@ footer{text-align:center;color:var(--soft);font-size:.85rem;margin-top:1.2rem}
     <p class="msg" id="msg"></p>
     <p class="by" id="by" hidden></p>
     <div class="step"><b>🌱 Today's little step</b><span id="step"></span></div>
-    <button class="read" id="read" type="button"><span aria-hidden="true">🔊</span> <span id="readLabel">Read aloud</span></button>
+    <button class="read" id="read" type="button"><span aria-hidden="true">🔊</span> <span id="readLabel">朗读 / Read aloud</span></button>
     <p class="note" id="note" hidden>Come back tomorrow for a new message 🌸</p>
   </article>
   <!--PHOTO-START-->
@@ -134,187 +134,187 @@ beads:`<g class="float2">${Array.from({length:18},(_,i)=>{const t=i/18*Math.PI*2
 
 const BUDDHA = [
 ["lotus", "A Calm Breath", "“Breathing in, I calm my body. Breathing out, I smile.”", "Take three slow breaths and smile softly.", "Thich Nhat Hanh"],
-["lotus", "No Mud, No Lotus", "“No mud, no lotus.” Even hard days can help something lovely grow.", "Think of one good thing that came from a hard time.", "Thich Nhat Hanh"],
-["sunrise", "A Smile Is Enough", "“Sometimes your joy is the source of your smile, but sometimes your smile can be the source of your joy.”", "Smile gently for three breaths.", "Thich Nhat Hanh"],
-["sunrise", "A Brand New Day", "“Waking up this morning, I smile. Twenty-four brand new hours are before me.”", "Smile softly as soon as you wake up.", "Thich Nhat Hanh"],
-["earth", "Steady as a Rock", "“As a solid rock is not shaken by the wind, so the wise are not shaken by praise or blame.”", "Breathe slowly and feel calm and steady inside.", "The Dhammapada"],
-["flower", "Right Here", "“The present moment is filled with joy and happiness. If you are attentive, you will see it.”", "Look around and find one small joy right now.", "Thich Nhat Hanh"],
-["cloud", "Clouds Pass By", "“Feelings come and go like clouds in a windy sky. Conscious breathing is my anchor.”", "Look up at the sky and let one worry drift by.", "Thich Nhat Hanh"],
-["snail", "Slow Is Good", "“Smile, breathe and go slowly.”", "Do one thing today a little more slowly.", "Thich Nhat Hanh"],
-["star", "Everything Is Possible", "“Because you are alive, everything is possible.”", "Say to yourself: I am alive, and that is wonderful.", "Thich Nhat Hanh"],
 ["heart", "Love Heals", "“Hatred does not cease by hatred, but only by love; this is the eternal rule.”", "Send a kind thought to someone you know.", "The Dhammapada"],
-["beads", "Real Treasure", "“Health is the greatest gift, contentment the greatest wealth.”", "Name one thing you have that makes you content.", "The Dhammapada"],
-["lotus", "The Heart of the Teaching", "“Avoid all evil, cultivate good, and purify your mind: this is the teaching of the Buddhas.”", "Think one good, pure thought today.", "The Dhammapada"],
-["bird", "Words of Peace", "“Better than a thousand hollow words is one word that brings peace.”", "Say one gentle, kind word to someone today.", "The Dhammapada"],
-["heart", "Kindness Wins", "“Overcome anger with kindness.” A soft heart is a strong heart.", "If you feel cross today, breathe and soften.", "The Dhammapada"],
-["heart", "Love for All", "“Let one cultivate a boundless love towards all beings.”", "Wish a bird, a plant or a person well today.", "The Buddha, Metta Sutta"],
+["heart", "Always Possible", "“Be kind whenever possible. It is always possible.”", "Do one kind thing for yourself or another.", "The Dalai Lama"],
 ["sky", "You Are the Sky", "“You are the sky. Everything else — it's just the weather.”", "When a worry comes, picture a wide blue sky.", "Pema Chödrön"],
 ["butterfly", "Letting Go", "“If you let go a little, you will have a little peace. If you let go a lot, you will have a lot of peace.”", "Let go of one small worry today.", "Ajahn Chah"],
+["heart", "Love for All", "“Let one cultivate a boundless love towards all beings.”", "Wish a bird, a plant or a person well today.", "The Buddha, Metta Sutta"],
 ["leaf", "Beginner's Mind", "“In the beginner's mind there are many possibilities.” Every day you can see the world fresh.", "Look at something ordinary as if for the first time.", "Shunryu Suzuki"],
-["heart", "Always Possible", "“Be kind whenever possible. It is always possible.”", "Do one kind thing for yourself or another.", "The Dalai Lama"],
-["sun", "Happiness Grows", "“If you want others to be happy, practice compassion. If you want to be happy, practice compassion.”", "Think warmly of someone who is having a hard time.", "The Dalai Lama"],
 ["lotus", "A Peaceful Heart", "Peace is not far away. It lives quietly inside your own heart.", "Place a hand on your heart and breathe gently."],
 ["candle", "One Little Light", "One candle can light many others and never grow smaller. Your kindness is like that.", "Share a smile with someone today."],
 ["tree", "Deep Roots", "A tree with deep roots stands calm in the wind. Your years have given you deep roots.", "Stand or sit tall and feel steady."],
+["lotus", "No Mud, No Lotus", "“No mud, no lotus.” Even hard days can help something lovely grow.", "Think of one good thing that came from a hard time.", "Thich Nhat Hanh"],
 ["moon", "The Quiet Moon", "The moon does not hurry, yet it always shines. You can be gentle and still shine.", "Look for the moon tonight if you can."],
 ["flower", "Bloom in Your Time", "Every flower opens in its own season. There is no rush.", "Be patient with yourself today."],
 ["turtle", "Steady Turtle", "Slow and steady is a fine way to go. Each gentle moment is enough.", "Take one peaceful breath before each thing you do today."],
 ["cloud", "Thoughts Are Clouds", "Thoughts drift in and drift out. You do not have to hold on to them.", "Let one thought float away like a cloud."],
+["earth", "Steady as a Rock", "“As a solid rock is not shaken by the wind, so the wise are not shaken by praise or blame.”", "Breathe slowly and feel calm and steady inside.", "The Dhammapada"],
 ["lotus", "This Moment", "This moment is the only one we truly have. It is enough.", "Notice three sounds around you right now."],
 ["sun", "Simple Joys", "Happiness is often in small things: a kind word, a bird's song, a sunny sky.", "Find one simple joy and enjoy it fully."],
 ["bird", "Morning Song", "The birds do not worry about tomorrow. They sing for today.", "Listen for a bird or hum a little tune."],
 ["heart", "Be Kind to You", "You deserve the same kindness you give to others.", "Say something kind to yourself in the mirror."],
+["sunrise", "A Smile Is Enough", "“Sometimes your joy is the source of your smile, but sometimes your smile can be the source of your joy.”", "Smile gently for three breaths.", "Thich Nhat Hanh"],
 ["moon", "The Calm Pond", "When a pond is calm, you can see the moon in it. When the mind is calm, we see clearly too.", "Sit quietly for one minute and just breathe."],
 ["sun", "Gratitude", "A grateful heart is a happy heart. There is always something to thank.", "Name three things you are thankful for."],
 ["leaf", "Everything Changes", "Seasons change, and spring always comes again.", "Notice something that has changed for the better."],
 ["lotus", "Kind Thoughts", "Kind thoughts make a kind life. Plant them like seeds each day.", "Think one kind thought about a neighbor."],
+["sun", "Happiness Grows", "“If you want others to be happy, practice compassion. If you want to be happy, practice compassion.”", "Think warmly of someone who is having a hard time.", "The Dalai Lama"],
 ["candle", "Warm Glow", "Loving kindness is a warm glow you can carry anywhere.", "Wish yourself: May I be happy. May I be well."],
 ["tree", "Patience", "Patience is a quiet kind of strength. Good things grow slowly.", "Wait kindly for something today."],
 ["flower", "Smile Inside", "A smile is a little gift you give to the world and to yourself.", "Smile at a flower, a picture or a friend."],
 ["rainbow", "After the Rain", "After every rain, the world is fresh and bright again.", "Remember a time things got better."],
+["beads", "Real Treasure", "“Health is the greatest gift, contentment the greatest wealth.”", "Name one thing you have that makes you content.", "The Dhammapada"],
 ["moon", "Rest Is Wise", "Resting is not lazy. Even the moon takes time to be dark before it shines.", "Close your eyes for one peaceful moment today."],
 ["heart", "Forgiving", "Forgiving lets your heart feel light. It is a gift to yourself.", "Let go of one old hurt, even just a little."],
 ["butterfly", "Lightness", "Holding on tight makes us heavy. Letting go makes us light as a butterfly.", "Open your hands, palms up, and relax."],
 ["lotus", "Loving Kindness", "May you be happy. May you be peaceful. May you be well.", "Say these three wishes for yourself."],
+["sunrise", "A Brand New Day", "“Waking up this morning, I smile. Twenty-four brand new hours are before me.”", "Smile softly as soon as you wake up.", "Thich Nhat Hanh"],
 ["lotus", "Kindness for Others", "May all beings be happy. May all beings be safe.", "Say this wish for the whole world."],
 ["bee", "Gentle Work", "The bee takes nectar without hurting the flower. We can live gently too.", "Do one task today in a gentle way."],
 ["tree", "Being Here", "Wherever you are, be all there. That is where life is.", "Put down other thoughts and enjoy what you are doing."],
 ["cloud", "Calm Mind", "A calm mind is like a quiet lake. It reflects beauty.", "Close your eyes and picture a quiet lake."],
+["heart", "Three Things", "“In the end, just three things matter: how well we have lived, how well we have loved, how well we have learned to let go.”", "Think of one person you have loved well.", "Jack Kornfield"],
 ["sun", "Light Within", "There is a warm light inside you that no one can take away.", "Sit in a sunny spot for a few minutes."],
 ["cloud", "Just This Breath", "When you breathe, just breathe. Enjoy each breath as a little gift.", "Notice five breaths, one at a time."],
 ["flower", "Beauty Everywhere", "Beauty is all around us, in a leaf, a face, a cloud.", "Find one beautiful thing and look at it a while."],
 ["heart", "Enough", "You do not need to do more or be more. You are enough just as you are.", "Say: I am enough."],
+["snail", "Slow Is Good", "“Smile, breathe and go slowly.”", "Do one thing today a little more slowly.", "Thich Nhat Hanh"],
 ["moon", "Peaceful Night", "At the end of the day, let the day go. Tomorrow is fresh.", "Tonight, think of one nice moment from today."],
 ["turtle", "No Hurry", "There is no race to win. Life is for enjoying.", "Look around slowly and enjoy what you see."],
 ["lotus", "Gentle Heart", "A gentle heart makes a gentle world.", "Be gentle with the next person you meet."],
 ["bird", "Freedom", "Worries are like cages. Kindness to yourself opens the door.", "Picture a little bird flying free."],
+["hands", "Between Equals", "“Compassion is not a relationship between the healer and the wounded. It's a relationship between equals.”", "See someone today as your equal and friend.", "Pema Chödrön"],
 ["star", "Wonder", "Look up at the night sky and feel how big and lovely the world is.", "Look at the stars or a picture of them tonight."],
 ["leaf", "Leaves Let Go", "When autumn comes, leaves let go easily. Letting go can be peaceful.", "Let one thing be as it is today."],
 ["sky", "Flowing River", "A river flows around stones instead of fighting them. We can be gentle like a river.", "If something is hard today, meet it with a gentle heart."],
 ["sun", "Sunshine Heart", "Be like the sun. It shines on everyone the same.", "Say hello warmly to someone today."],
+["butterfly", "A Mind That Lets Go", "“Do everything with a mind that lets go.”", "Do one thing today without worrying how it turns out.", "Ajahn Chah"],
 ["candle", "Quiet Time", "A little quiet each day helps the heart feel calm.", "Sit in silence for two minutes."],
 ["heart", "Compassion", "Compassion means caring for others and for yourself when things are hard.", "Be extra gentle with yourself today."],
 ["flower", "Every Day a Gift", "Each day is a gift. That is why it is called the present.", "Unwrap today with a smile."],
 ["tree", "Strong and Soft", "A willow bends in the wind and does not break. Soft can be strong.", "Breathe gently and let your heart feel soft like a willow."],
+["lotus", "The Heart of the Teaching", "“Avoid all evil, cultivate good, and purify your mind: this is the teaching of the Buddhas.”", "Think one good, pure thought today.", "The Dhammapada"],
 ["lotus", "Rising Up", "The lotus grows up through the mud into a lovely flower. You rise too.", "Think of how far you have come in life."],
 ["bird", "Kind Speech", "Speak kindly, and kind words come back to you.", "Give someone a compliment today."],
 ["cloud", "Just Watching", "You can watch your worries like watching clouds, from a calm place.", "Notice a worry, then say: that is just a thought."],
-["moon", "Soft Light", "Even a little light is enough to find your way.", "Keep a soft light on in the evening."],
 ["rainbow", "Colors of Life", "Life has many colors: happy, sad, calm. All are part of the rainbow.", "Name one color you see and enjoy it."],
+["flower", "Right Here", "“The present moment is filled with joy and happiness. If you are attentive, you will see it.”", "Look around and find one small joy right now.", "Thich Nhat Hanh"],
 ["heart", "Loving Yourself", "Loving yourself is the first step to loving the world.", "Hug yourself gently with both arms."],
 ["moon", "Nothing Else", "When you rest, just rest. Let your heart be quiet.", "Enjoy a quiet moment without doing anything."],
 ["sun", "Good Morning, World", "Greet each morning like an old friend.", "Say good morning out loud to the day."],
-["leaf", "Simple Living", "A simple life can be a rich life. Less can be more.", "Enjoy one simple thing today."],
 ["lotus", "Awake", "To be awake is to notice life as it happens.", "Notice the air on your skin right now."],
+["earth", "Kindness Everywhere", "“Radiating kindness over the entire world.”", "Picture kindness spreading from you to the whole world.", "The Buddha, Metta Sutta"],
 ["butterfly", "Change Is Natural", "A caterpillar becomes a butterfly. Change can bring beautiful things.", "Welcome one little change today."],
 ["star", "Your Good Heart", "Your good heart has touched many lives.", "Remember someone you helped long ago."],
 ["candle", "Share Your Light", "Sharing your warmth makes your light grow brighter.", "Call or write to someone you love."],
 ["tree", "Belonging", "You are part of this world, like a tree is part of a forest.", "Feel yourself as part of something big and kind."],
+["heart", "Kindness Is My Religion", "“My religion is very simple. My religion is kindness.”", "Let kindness guide one choice today.", "The Dalai Lama"],
 ["lotus", "Everyday Mindfulness", "Any ordinary moment can become peaceful when we pay gentle attention.", "Pay loving attention to one ordinary moment."],
 ["flower", "Kind Eyes", "See others with kind eyes, and the world feels softer.", "Look at someone today with warm, kind eyes."],
 ["heart", "Heart Wide Open", "An open heart has room for everyone.", "Think of someone and wish them well."],
 ["moon", "Letting the Day Go", "Each night we can put down the day, like setting down a heavy bag.", "Tonight, breathe out slowly three times and let the day go."],
+["bird", "Words of Peace", "“Better than a thousand hollow words is one word that brings peace.”", "Say one gentle, kind word to someone today.", "The Dhammapada"],
 ["sun", "Warm Kindness", "Kindness is like sunshine. It warms everyone it touches.", "Hold a door or say thank you with a smile."],
 ["lotus", "Peace Begins With Me", "Peace in the world begins with peace in my own heart.", "Say softly: may I be peaceful."],
 ["bird", "Listening", "Listening kindly is one of the greatest gifts we can give.", "Listen to someone today without hurrying."],
 ["cloud", "Soft Sky", "The sky holds every cloud and every storm, and stays wide and calm.", "Take a deep breath and feel roomy inside."],
+["cloud", "Clouds Pass By", "“Feelings come and go like clouds in a windy sky. Conscious breathing is my anchor.”", "Look up at the sky and let one worry drift by.", "Thich Nhat Hanh"],
 ["turtle", "At Home Inside", "A turtle carries its home. You can carry calm with you everywhere.", "Take one calm breath wherever you are."],
 ["leaf", "Nature's Friend", "Nature is a kind teacher. It is always there to calm us.", "Touch a plant or look at a tree today."],
 ["heart", "Time With a Friend", "Sharing a quiet moment with a friend is sharing peace.", "Share a kind word with a friend, even on the phone."],
 ["star", "Tiny Miracles", "Every breath, every heartbeat is a small miracle.", "Feel your heartbeat for a moment."],
-["heart", "Friendly Heart", "“Happily we live, friendly among those who are unfriendly.”", "Send a friendly thought to someone difficult.", "The Dhammapada"],
+["heart", "Kindness Wins", "“Overcome anger with kindness.” A soft heart is a strong heart.", "If you feel cross today, breathe and soften.", "The Dhammapada"],
 ["flower", "Planting Seeds", "Kind words and good deeds are seeds. They grow into happiness.", "Plant one seed of kindness today."],
 ["sun", "Joy Is Near", "Joy is not far away. It is often right in front of us.", "Notice something that makes you smile."],
 ["moon", "Dreams", "Rest your mind and let sweet dreams come.", "Think of a happy memory as you drift off tonight."],
 ["lotus", "The Middle Way", "Not too much, not too little. A gentle balance is best.", "Be gentle and balanced in your thoughts today."],
+["flower", "Perfect As You Are", "“Each of you is perfect the way you are ... and you can use a little improvement.”", "Smile at yourself, just as you are.", "Shunryu Suzuki"],
 ["cloud", "Clear Mind", "A snow globe settles when we let it sit still. So does a busy mind.", "Sit still for a moment and let your mind settle."],
 ["butterfly", "Light Heart", "A light heart makes the day feel easy.", "Laugh at something small today."],
-["candle", "Hope", "Hope is a small flame that keeps us warm.", "Think of something you look forward to."],
 ["tree", "Wisdom of Years", "You have lived through many seasons. That is wisdom.", "Share one piece of good advice with someone."],
 ["bird", "Morning Peace", "The early morning is quiet and fresh, full of peace.", "Enjoy the morning quiet for a moment."],
 ["heart", "Good Intentions", "Start each day with a kind wish, and the day follows it.", "Make a kind wish for today."],
+["star", "Wishing Happiness", "“All the joy the world contains has come through wishing happiness for others.”", "Wish happiness for three people today.", "Shantideva"],
 ["cloud", "It Will Change", "Nothing stays forever, not even hard feelings. Everything moves on.", "Remember: this too will change."],
 ["flower", "Gentle Growth", "We keep growing, at every age, like a garden.", "Learn one small new thing today."],
 ["rainbow", "Hope After Storms", "Storms pass, and rainbows follow.", "Look for something hopeful today."],
 ["sun", "Warm Welcome", "Welcome each person as a friend.", "Greet someone warmly today."],
+["sun", "Only Now", "“Life is available only in the present moment.”", "Notice what is lovely about right now.", "Thich Nhat Hanh"],
 ["lotus", "Sitting Still", "Sitting still for a moment is a gift to yourself.", "Sit comfortably and rest your hands in your lap."],
 ["star", "Giving Thanks", "Every day holds gifts. Giving thanks makes the heart glad.", "Say thank you for three gifts in your life."],
 ["leaf", "Soft Breeze", "A soft breeze moves the leaves without harm. Be gentle like the breeze.", "Feel fresh air on your face today."],
 ["moon", "Calm Evening", "Evening is a time to slow down and be kind to yourself.", "Dim the lights a little and relax tonight."],
+["heart", "Friendly Heart", "“Happily we live, friendly among those who are unfriendly.”", "Send a friendly thought to someone difficult.", "The Dhammapada"],
 ["heart", "You Are Loved", "You are loved more than you know.", "Think of someone who loves you."],
 ["star", "Shine Softly", "You do not have to be loud to shine. Stars shine quietly.", "Be quietly proud of yourself today."],
-["bee", "Busy and Happy", "A bee is busy but never in a rush. Keep a happy, easy pace.", "Do your chores at a relaxed pace."],
-["turtle", "Take Your Time", "Good things come to those who take their time.", "Give yourself extra time for everything today."],
-["butterfly", "Delight", "Let yourself be delighted by small things, like a child.", "Enjoy a sweet little moment today."],
 ["lotus", "Kind Mind", "A kind mind is a peaceful mind.", "Replace one unkind thought with a kind one."],
 ["tree", "Standing Strong", "Like an old oak, you have weathered many storms and still stand.", "Feel proud of your strength."],
+["star", "Everything Is Possible", "“Because you are alive, everything is possible.”", "Say to yourself: I am alive, and that is wonderful.", "Thich Nhat Hanh"],
 ["bird", "Singing Heart", "A happy heart sings even without words.", "Hum a song you love."],
 ["candle", "Evening Blessing", "May your evening be peaceful and your sleep be sweet.", "Say goodnight to your day with a smile."],
 ["sun", "Fresh Start", "Every morning, you can begin again.", "Start today with one kind act."],
 ["rainbow", "Gentle Rain", "Gentle rain helps everything grow. Gentle words help people grow.", "Encourage someone with a kind word."],
-["flower", "Thank You", "Saying thank you makes two hearts happy.", "Thank someone for something small."],
+["sun", "Your Own Actions", "“Happiness is not something ready made. It comes from your own actions.”", "Do one small thing today that makes you happy.", "The Dalai Lama"],
 ["heart", "Mindful Heart", "When you pay attention with love, everything becomes special.", "Give full attention to one thing you love."],
 ["lotus", "Deep Peace", "Deep peace is always there, beneath the waves, like the bottom of the sea.", "Breathe slowly and feel the calm under everything."],
 ["moon", "Night Is Kind", "Night comes so we can rest. Let yourself rest well.", "Tonight, rest in one peaceful thought."],
-["lotus", "Our Thoughts", "“We are what we think. All that we are arises with our thoughts. With our thoughts we make the world.”", "Choose one happy thought to carry today.", "The Dhammapada"],
-["sun", "Happiness Follows", "“Speak or act with a pure mind and happiness will follow you as your shadow, unshakable.”", "Say one kind thing with a pure heart.", "The Dhammapada"],
-["earth", "The Greatest Victory", "“Though one conquer a thousand times a thousand men in battle, the one who conquers himself is the noblest victor.”", "Gently choose patience over irritation today.", "The Dhammapada"],
-["sunrise", "Peace, Joy and Serenity", "“Every breath we take, every step we make, can be filled with peace, joy and serenity.”", "Fill three breaths with peace.", "Thich Nhat Hanh"],
-["sun", "Only Now", "“Life is available only in the present moment.”", "Notice what is lovely about right now.", "Thich Nhat Hanh"],
-["flower", "Be Yourself", "“To be beautiful means to be yourself.”", "Say: I am lovely just as I am.", "Thich Nhat Hanh"],
-["heart", "Love's Other Name", "“Understanding is love's other name.”", "Try to understand someone a little better today.", "Thich Nhat Hanh"],
-["star", "Hope Helps", "“Hope is important because it can make the present moment less difficult to bear.”", "Hold one hopeful thought in your heart.", "Thich Nhat Hanh"],
-["heart", "Kindness Is My Religion", "“My religion is very simple. My religion is kindness.”", "Let kindness guide one choice today.", "The Dalai Lama"],
-["earth", "Love Is Needed", "“Love and compassion are necessities, not luxuries. Without them, humanity cannot survive.”", "Share a little love with someone today.", "The Dalai Lama"],
-["hands", "Between Equals", "“Compassion is not a relationship between the healer and the wounded. It's a relationship between equals.”", "See someone today as your equal and friend.", "Pema Chödrön"],
-["heart", "Include Yourself", "“If your compassion does not include yourself, it is incomplete.”", "Be as kind to yourself as to a friend.", "Jack Kornfield"],
-["butterfly", "A Mind That Lets Go", "“Do everything with a mind that lets go.”", "Do one thing today without worrying how it turns out.", "Ajahn Chah"],
-["lotus", "At Ease", "“May all beings be at ease.”", "Say this wish slowly three times.", "The Buddha, Metta Sutta"],
 ["beads", "Counting Kindness", "Some people use prayer beads to count kind wishes, one bead for each blessing.", "Count ten kind wishes, one for each finger."],
+["sunrise", "Peace, Joy and Serenity", "“Every breath we take, every step we make, can be filled with peace, joy and serenity.”", "Fill three breaths with peace.", "Thich Nhat Hanh"],
 ["bird", "A Gentle Voice", "A gentle voice can calm a room and soothe a heart.", "Speak softly and warmly today."],
 ["moon", "Moonlight Kindness", "The moon shines on everyone without choosing. Our kindness can be like that.", "Send a kind thought to everyone you think of today."],
 ["sunrise", "New Dawn", "Each dawn is a fresh page. Yesterday is done, and today is new.", "Greet the new day with a kind wish."],
 ["aura", "Your Peaceful Glow", "When you are peaceful, others feel it too, like the warmth of a candle.", "Sit peacefully and let your calm glow."],
+["lotus", "Our Thoughts", "“We are what we think. All that we are arises with our thoughts. With our thoughts we make the world.”", "Choose one happy thought to carry today.", "The Dhammapada"],
 ["tree", "The Bodhi Tree", "The Buddha found peace sitting quietly under a tree. Quiet moments can bring us peace too.", "Sit quietly for a few minutes and breathe."],
 ["lotus", "Awakening", "The word Buddha means 'one who is awake.' We can be awake to the beauty around us.", "Notice something beautiful you usually miss."],
 ["heart", "Right Intention", "Starting with a kind intention makes everything we do gentler.", "Set a kind intention for today."],
 ["bird", "Wise Speech", "The Buddha taught speaking words that are true, kind and helpful.", "Before speaking, ask: is it kind?"],
+["heart", "Include Yourself", "“If your compassion does not include yourself, it is incomplete.”", "Be as kind to yourself as to a friend.", "Jack Kornfield"],
 ["star", "Right Effort", "Right effort means gently growing good thoughts and letting unkind ones go.", "Grow one good thought today."],
 ["candle", "Right Mindfulness", "Mindfulness is gently paying attention to this moment, with kindness.", "Pay gentle attention to your breath for a minute."],
 ["lotus", "The Eightfold Path", "The Buddha taught a path of wise living: kind thoughts, kind words and kind actions.", "Choose kindness in thought, word and action."],
 ["heart", "Joy for Others", "Being happy for other people's good fortune is a lovely Buddhist practice called sympathetic joy.", "Feel happy for someone's good news."],
+["lotus", "At Ease", "“May all beings be at ease.”", "Say this wish slowly three times.", "The Buddha, Metta Sutta"],
 ["cloud", "Equanimity", "Equanimity is a calm, balanced heart, steady in happy times and hard times.", "Say: Whatever comes, I can meet it calmly."],
 ["lotus", "The Four Kind Hearts", "The Buddha taught four beautiful states of heart: loving-kindness, compassion, joy for others and calm balance.", "Practice one of the four today."],
 ["sun", "Generosity of Spirit", "Giving is a joy. Even a smile is a precious gift.", "Give a warm smile to someone today."],
 ["bee", "Gathering Goodness", "Like a bee gathering sweetness, we can gather good moments all day.", "Collect three sweet moments today."],
+["cloud", "What It Teaches", "“Nothing ever goes away until it has taught us what we need to know.”", "Ask gently: what is this moment teaching me?", "Pema Chödrön"],
 ["snail", "One Thing at a Time", "Doing one thing at a time, with care, brings a quiet mind.", "Do one thing today with full attention."],
 ["cat", "Content Like a Cat", "A cat curled in the sun knows how to be content. Contentment is a treasure.", "Enjoy a moment of simple contentment."],
 ["turtle", "Wise and Patient", "Patience grows wisdom, slowly and surely.", "Be patient with someone today."],
 ["butterfly", "Impermanence", "All things change, like clouds and seasons. This helps us hold life gently.", "Hold today's worries lightly."],
+["tree", "A Still Forest Pool", "“Try to be mindful, and let things take their natural course. Then your mind will become still, like a clear forest pool.”", "Picture a clear, still forest pool.", "Ajahn Chah"],
 ["leaf", "Interbeing", "Everything is connected: the sun, the rain, the earth and us.", "Feel connected to everything around you."],
 ["flower", "A Flower Smiles", "A flower does not try to be beautiful. It just blooms. You can just be.", "Let yourself simply be for a moment."],
 ["star", "Tiny Kindnesses", "The smallest kindness is never wasted.", "Do one tiny kindness today."],
 ["heart", "A Soft Answer", "Answering gently can calm anger, like a cool breeze on a hot day.", "Answer gently if someone is cross today."],
+["flower", "Be Yourself", "“To be beautiful means to be yourself.”", "Say: I am lovely just as I am.", "Thich Nhat Hanh"],
 ["moon", "Letting Worries Rest", "Worries can rest too. We can set them down for the night.", "Set down one worry before the evening ends."],
 ["rainbow", "All Colors Welcome", "Every feeling is welcome to visit. Kindly notice it, and let it move on.", "Kindly notice one feeling and let it be."],
 ["sky", "Spacious Heart", "A spacious heart, like a big sky, has room for everything.", "Breathe in and feel your heart open wide."],
 ["hands", "Folded Hands", "Joining the palms together is a gentle sign of respect and peace.", "Join your palms and bow your head softly."],
+["sun", "Happiness Follows", "“Speak or act with a pure mind and happiness will follow you as your shadow, unshakable.”", "Say one kind thing with a pure heart.", "The Dhammapada"],
 ["beads", "Mantra of Peace", "Repeating a peaceful word, like 'peace' or 'calm', can settle the mind.", "Softly repeat the word 'peace' ten times."],
 ["earth", "Caring for the Earth", "The Earth holds us all. We can bless it with loving thoughts.", "Send a loving wish to the whole Earth."],
 ["aura", "Kind Energy", "Kind thoughts make the air around us feel warmer.", "Think warmly of everyone around you."],
 ["sunrise", "Morning Intention", "In the morning, we can wish: may I be kind today.", "Say: May I be kind today."],
+["heart", "Love's Other Name", "“Understanding is love's other name.”", "Try to understand someone a little better today.", "Thich Nhat Hanh"],
 ["candle", "Sharing Merit", "Buddhists sometimes share the goodness of their kind acts with all beings.", "Say: May the good I do today help everyone."],
 ["lotus", "Refuge", "Many Buddhists find comfort in the Buddha, the teachings and the kind community. Comfort is always near.", "Think of something that gives you comfort."],
 ["heart", "Gentle Speech at Home", "Kind words at home make a peaceful home.", "Speak kindly to everyone you talk with today."],
 ["bird", "The Joy of Listening", "When we listen with a quiet mind, we hear the world more clearly.", "Listen quietly to the sounds around you."],
+["earth", "Love Is Needed", "“Love and compassion are necessities, not luxuries. Without them, humanity cannot survive.”", "Share a little love with someone today.", "The Dalai Lama"],
 ["tree", "Growing Wisdom", "Wisdom grows from kindness, patience and paying attention.", "Pay kind attention to something today."],
 ["sun", "Warm Heart, Warm World", "When our heart is warm, the world feels warmer.", "Warm someone's heart with a kind word."],
 ["cloud", "No Need to Hold", "We do not need to hold every thought. Some can simply float past.", "Let one thought float past without holding it."],
 ["star", "Bright Mind", "A mind full of kindness shines like a star.", "Think of someone kindly and feel your mind brighten."],
+["earth", "The Greatest Victory", "“Though one conquer a thousand times a thousand men in battle, the one who conquers himself is the noblest victor.”", "Gently choose patience over irritation today.", "The Dhammapada"],
 ["moon", "Quiet Gratitude", "At day's end, a quiet thank you brings peace.", "Say thank you for one thing from today."],
 ["butterfly", "Gentle Freedom", "Letting go of 'should' and 'must' brings gentle freedom.", "Let go of one 'should' today."],
 ["flower", "The Smiling Buddha", "Many statues show the Buddha with a gentle smile. A gentle smile can be our practice too.", "Wear a gentle smile for a few minutes."],
 ["lotus", "Just Breathing", "Sometimes the kindest thing is to simply breathe and be.", "Breathe and simply be for one minute."],
+["star", "Hope Helps", "“Hope is important because it can make the present moment less difficult to bear.”", "Hold one hopeful thought in your heart.", "Thich Nhat Hanh"],
 ["heart", "Loving All Ages", "Love has no age. Your love is as precious now as ever.", "Share your love with someone of any age."],
 ["sunrise", "Beginning Again", "We can always begin again, with a kind heart.", "Begin again gently, whenever you need to."],
 ];
@@ -389,8 +389,8 @@ const PRANIC = [
 ["leaf", "Light Green for Freshness", "Soft light green reminds us of fresh leaves and new life.", "Look at a green plant and feel refreshed."],
 ["sun", "Golden Light", "Golden light is linked with wisdom and blessing.", "Picture golden sunshine around your home."],
 ["star", "You Are a Soul", "Master Choa Kok Sui taught that each of us is a soul, a spark of divine light.", "Say: I am a spark of divine light."],
-["heart", "Kindness and Firmness", "Master Choa Kok Sui taught that loving-kindness can be balanced with gentle firmness. Kind does not mean weak.", "Say one kind but honest thing today."],
 ["heart", "The Heart Softens Feelings", "Pranic Healing teaches that a loving heart helps soften strong feelings like anger and fear.", "When a strong feeling comes, think of someone you love."],
+["heart", "Kindness and Firmness", "Master Choa Kok Sui taught that loving-kindness can be balanced with gentle firmness. Kind does not mean weak.", "Say one kind but honest thing today."],
 ["star", "The Center of Clear Thinking", "The ajna chakra, between the eyebrows, is linked with clear thinking and good choices.", "Picture a soft light between your eyebrows and think clearly."],
 ["bird", "The Throat Center", "The throat chakra is linked with speaking and creating. Kind words are a gift from this center.", "Speak one creative, kind sentence today."],
 ["lotus", "Om Mani Padme Hum", "Master Choa Kok Sui wrote about this ancient mantra of compassion. Its sound is soft and soothing.", "Softly say 'Om Mani Padme Hum' three times."],
@@ -506,43 +506,428 @@ const PRANIC = [
 ["star", "Keep Learning", "Master Choa Kok Sui loved learning. At every age, we can learn something new and good.", "Learn one new, happy fact today."],
 ];
 
+const ZH_B = {
+"A Calm Breath":["平静的呼吸","“吸气，我让身体平静；呼气，我微笑。”","慢慢呼吸三次，轻轻地微笑。"],
+"No Mud, No Lotus":["没有淤泥，就没有莲花","“没有淤泥，就没有莲花。”难过的日子，也能帮助美好的东西生长。","想一想，从难过的时候里，得到过的一件好事。"],
+"A Smile Is Enough":["一个微笑就够了","“有时候，喜悦是微笑的源头；有时候，微笑也可以是喜悦的源头。”","轻轻微笑，保持三次呼吸。"],
+"A Brand New Day":["崭新的一天","“今天早上醒来，我微笑。崭新的二十四小时就在我面前。”","一醒来，就轻轻地微笑一下。"],
+"Steady as a Rock":["稳如磐石","“坚固的岩石不会被风吹动；有智慧的人，也不会被称赞或批评动摇。”","慢慢呼吸，感受内心的平静和安稳。"],
+"Right Here":["就在这里","“当下这一刻充满了喜悦和幸福。只要用心，你就会看见。”","看看四周，现在就找到一件小小的开心事。"],
+"Clouds Pass By":["云会飘走","“感受来来去去，就像刮风天空中的云。用心的呼吸是我的锚。”","抬头看看天空，让一个烦恼慢慢飘走。"],
+"Slow Is Good":["慢慢来很好","“微笑，呼吸，慢慢走。”","今天做一件事的时候，放慢一点。"],
+"Everything Is Possible":["一切皆有可能","“因为你活着，一切都有可能。”","对自己说：我活着，这真美好。"],
+"Love Heals":["爱能疗愈","“仇恨不能止息仇恨，只有爱才能止息仇恨，这是永恒的法则。”","给一位你认识的人送去一个善意的念头。"],
+"Real Treasure":["真正的宝藏","“健康是最好的礼物，知足是最大的财富。”","说出一件让你感到知足的东西。"],
+"The Heart of the Teaching":["佛法的核心","“诸恶莫作，众善奉行，自净其意，是诸佛教。”","今天想一个美好、纯净的念头。"],
+"Words of Peace":["平安的话语","“千句空话，不如一句带来平安的话。”","今天对一个人说一句温柔、善良的话。"],
+"Kindness Wins":["善良会赢","“以慈悲战胜愤怒。”柔软的心，是坚强的心。","今天如果有点生气，就深呼吸，让心柔软下来。"],
+"Love for All":["爱一切众生","“对一切众生，培养无边无际的慈爱。”","今天祝福一只小鸟、一棵植物或一个人。"],
+"You Are the Sky":["你就是天空","“你是天空，其他一切只是天气。”","烦恼来的时候，想象一片广阔的蓝天。"],
+"Letting Go":["放下","“放下一点，就有一点平静；放下很多，就有很多平静。”","今天放下一个小小的烦恼。"],
+"Beginner's Mind":["初心","“初学者的心里，有很多可能。”每一天，你都可以用新鲜的眼光看世界。","看一件平常的东西，就像第一次看见它一样。"],
+"Always Possible":["永远都可以","“尽可能地善良。其实，永远都可以善良。”","为自己或别人做一件善事。"],
+"Happiness Grows":["幸福会成长","“如果你想让别人快乐，就修慈悲；如果你想让自己快乐，也修慈悲。”","温暖地想一想一位正在辛苦的人。"],
+"A Peaceful Heart":["平静的心","平静并不遥远，它静静地住在你自己的心里。","把手放在心口，轻轻地呼吸。"],
+"One Little Light":["一点小小的光","一支蜡烛可以点亮许多蜡烛，自己却不会变小。你的善良也是这样。","今天和别人分享一个微笑。"],
+"Deep Roots":["深深的根","根扎得深的树，在风中也很安稳。你的岁月给了你深深的根。","坐直或站直，感受自己的安稳。"],
+"The Quiet Moon":["安静的月亮","月亮从不匆忙，却一直在发光。你可以温柔，也依然闪亮。","今晚如果可以，找一找月亮。"],
+"Bloom in Your Time":["按自己的时节开花","每一朵花都在自己的季节开放，不用着急。","今天对自己多一点耐心。"],
+"Steady Turtle":["稳稳的乌龟","慢慢地、稳稳地走，是很好的方式。每一个温柔的时刻，都已足够。","今天做每件事之前，先平静地呼吸一次。"],
+"Thoughts Are Clouds":["念头像云","念头飘来又飘走，你不必紧紧抓住它们。","让一个念头像云一样飘走。"],
+"This Moment":["这一刻","这一刻，是我们真正拥有的。它已经足够。","现在留意身边的三种声音。"],
+"Simple Joys":["简单的快乐","幸福常常在小事里：一句好话，一声鸟鸣，一片晴空。","找一件简单的快乐，好好享受它。"],
+"Morning Song":["早晨的歌","小鸟不担心明天，它们为今天歌唱。","听一听鸟叫，或者轻轻哼一首小曲。"],
+"Be Kind to You":["善待自己","你也值得得到你给别人的那份善意。","对着镜子，对自己说一句好话。"],
+"The Calm Pond":["平静的池塘","池塘平静时，能映出月亮。心平静时，我们也看得更清楚。","安静地坐一分钟，只是呼吸。"],
+"Gratitude":["感恩","感恩的心是快乐的心。总有值得感谢的事。","说出三件你感恩的事。"],
+"Everything Changes":["一切都在变化","季节会变换，春天总会再来。","留意一件变得更好的事。"],
+"Kind Thoughts":["善良的念头","善良的念头，造就善良的人生。每天像种子一样种下它们。","对一位邻居，想一个善良的念头。"],
+"Warm Glow":["温暖的光","慈爱是一份温暖的光，你可以带到任何地方。","祝福自己：愿我快乐，愿我安好。"],
+"Patience":["耐心","耐心是一种安静的力量。美好的事物慢慢生长。","今天温和地等待一件事。"],
+"Smile Inside":["心里的微笑","微笑是你送给世界、也送给自己的小礼物。","对一朵花、一张照片或一位朋友微笑。"],
+"After the Rain":["雨过天晴","每一场雨之后，世界又变得清新明亮。","回想一次事情变好的经历。"],
+"Rest Is Wise":["休息是智慧","休息不是懒惰。月亮也要先暗下来，才会再发光。","今天闭上眼睛，享受片刻的宁静。"],
+"Forgiving":["原谅","原谅让你的心变轻。这是送给自己的礼物。","放下一个旧的伤痛，哪怕只放下一点点。"],
+"Lightness":["轻盈","抓得太紧会让我们沉重，放下会让我们像蝴蝶一样轻盈。","双手张开，掌心向上，放松下来。"],
+"Loving Kindness":["慈心","愿你快乐。愿你平安。愿你安好。","把这三个祝福送给自己。"],
+"Kindness for Others":["慈心待人","愿一切众生快乐。愿一切众生平安。","把这个祝福送给整个世界。"],
+"Gentle Work":["温柔地做事","蜜蜂采蜜，却不伤害花朵。我们也可以温柔地生活。","今天温柔地做一件事。"],
+"Being Here":["活在此处","无论你在哪里，都全心在那里。生活就在那里。","放下其他念头，享受你正在做的事。"],
+"Calm Mind":["平静的心","平静的心，像安静的湖，映出美丽。","闭上眼睛，想象一片安静的湖。"],
+"Light Within":["内在的光","你心里有一道温暖的光，谁也拿不走。","在有阳光的地方坐几分钟。"],
+"Just This Breath":["只是这一口呼吸","呼吸的时候，就只是呼吸。把每一口呼吸当作一份小礼物。","一个一个地，留意五次呼吸。"],
+"Beauty Everywhere":["美无处不在","美就在我们身边：一片叶子，一张笑脸，一朵云。","找一样美丽的东西，多看它一会儿。"],
+"Enough":["已经足够","你不需要做得更多，也不需要变得更好。现在的你就已经足够。","对自己说：我已经足够好。"],
+"Peaceful Night":["平安的夜晚","一天结束时，就让这一天过去吧。明天是新的。","今晚想一想今天的一个美好时刻。"],
+"No Hurry":["不着急","人生不是比赛，是用来享受的。","慢慢看看四周，欣赏你看到的一切。"],
+"Gentle Heart":["温柔的心","温柔的心，造就温柔的世界。","对下一个遇见的人温柔一些。"],
+"Freedom":["自由","烦恼像笼子，善待自己就能打开笼门。","想象一只小鸟自由地飞翔。"],
+"Wonder":["惊叹","抬头看看夜空，感受世界多么广大、多么美好。","今晚看看星星，或星星的图片。"],
+"Leaves Let Go":["树叶放手","秋天来了，树叶轻轻地放手。放下也可以很平静。","今天让一件事顺其自然。"],
+"Flowing River":["流动的河","河水绕过石头，而不是和石头争斗。我们也可以像河一样温柔。","今天遇到难事，用一颗温柔的心去面对。"],
+"Sunshine Heart":["阳光般的心","像太阳一样，平等地照耀每一个人。","今天热情地向一个人问好。"],
+"Quiet Time":["安静的时光","每天一点安静，让心感到平和。","静静地坐两分钟。"],
+"Compassion":["慈悲","慈悲，就是在困难的时候关心别人，也关心自己。","今天对自己格外温柔。"],
+"Every Day a Gift":["每天都是礼物","每一天都是一份礼物，所以英文把“现在”叫作“礼物”。","带着微笑，打开今天这份礼物。"],
+"Strong and Soft":["坚强又柔软","柳树在风中弯腰，却不会折断。柔软也可以很坚强。","轻轻呼吸，让心像柳树一样柔软。"],
+"Rising Up":["向上生长","莲花从淤泥中长出，开成美丽的花。你也在向上生长。","想一想，你这一生走了多远的路。"],
+"Kind Speech":["善言","说善良的话，善良的话也会回到你身边。","今天称赞一个人。"],
+"Just Watching":["只是看着","你可以在平静中看着烦恼，就像看着天上的云。","留意一个烦恼，然后说：这只是一个念头。"],
+"Colors of Life":["生命的颜色","生命有许多颜色：开心、难过、平静，都是彩虹的一部分。","说出你看到的一种颜色，好好欣赏它。"],
+"Loving Yourself":["爱自己","爱自己，是爱这个世界的第一步。","用双臂轻轻地抱抱自己。"],
+"Nothing Else":["别无他事","休息的时候，就只是休息。让心安静下来。","享受一段什么都不做的安静时光。"],
+"Good Morning, World":["早安，世界","像迎接老朋友一样，迎接每一个早晨。","大声对今天说一声早安。"],
+"Awake":["清醒","清醒，就是留意生活正在发生的每一刻。","现在感受一下皮肤上的空气。"],
+"Change Is Natural":["变化是自然的","毛毛虫会变成蝴蝶。变化也能带来美好。","今天欢迎一个小小的变化。"],
+"Your Good Heart":["你善良的心","你善良的心，温暖过许多人的生命。","想起很久以前你帮助过的一个人。"],
+"Share Your Light":["分享你的光","分享你的温暖，你的光会更亮。","给你爱的人打个电话或写几句话。"],
+"Belonging":["归属","你是这个世界的一部分，就像一棵树是森林的一部分。","感受自己是一个又大又温暖的整体的一部分。"],
+"Everyday Mindfulness":["日常的正念","只要温柔地留心，任何平常的时刻都能变得平静。","用爱心留意一个平常的时刻。"],
+"Kind Eyes":["慈祥的眼睛","用慈祥的眼睛看别人，世界也会变得柔和。","今天用温暖、慈祥的眼光看一个人。"],
+"Heart Wide Open":["敞开的心","敞开的心，容得下每一个人。","想起一个人，祝福他一切安好。"],
+"Letting the Day Go":["让这一天过去","每天晚上，我们都可以放下这一天，就像放下一个沉重的包袱。","今晚慢慢呼气三次，让这一天过去。"],
+"Warm Kindness":["温暖的善意","善意像阳光，温暖它照到的每一个人。","帮人扶一下门，或微笑着说声谢谢。"],
+"Peace Begins With Me":["和平从我开始","世界的和平，从我心里的平静开始。","轻声说：愿我平静。"],
+"Listening":["倾听","用心地倾听，是我们能给出的最好的礼物之一。","今天不慌不忙地听一个人说话。"],
+"Soft Sky":["柔和的天空","天空容纳每一朵云、每一场风雨，却始终广阔而平静。","深深吸一口气，感受心里宽宽敞敞。"],
+"At Home Inside":["心安即是家","乌龟背着自己的家。你也可以把平静带到任何地方。","无论在哪里，都平静地呼吸一次。"],
+"Nature's Friend":["大自然的朋友","大自然是一位慈祥的老师，总在那里让我们平静。","今天摸一摸植物，或看一看树。"],
+"Time With a Friend":["和朋友在一起","和朋友分享一段安静的时光，就是分享平安。","对一位朋友说句好话，打电话也可以。"],
+"Tiny Miracles":["小小的奇迹","每一次呼吸、每一次心跳，都是一个小小的奇迹。","感受一下自己的心跳。"],
+"Friendly Heart":["友善的心","“在不友善的人中间，我们友善而快乐地生活。”","给一个难相处的人送去友善的念头。"],
+"Planting Seeds":["播下种子","善言和善行都是种子，会长成幸福。","今天播下一颗善良的种子。"],
+"Joy Is Near":["快乐就在身边","快乐并不遥远，它常常就在我们眼前。","留意一件让你微笑的事。"],
+"Dreams":["美梦","让心休息，让甜美的梦到来。","今晚入睡时，想一段快乐的回忆。"],
+"The Middle Way":["中道","不太多，也不太少。温和的平衡最好。","今天让自己的想法温和而平衡。"],
+"Clear Mind":["清明的心","雪花球放着不动，雪就会慢慢落定。忙乱的心也是一样。","静静地坐一会儿，让心安定下来。"],
+"Light Heart":["轻松的心","心情轻松，一天也会过得轻松。","今天为一件小事笑一笑。"],
+"Wisdom of Years":["岁月的智慧","你经历过许多季节，这就是智慧。","和别人分享一句好的建议。"],
+"Morning Peace":["早晨的宁静","清晨安静而清新，充满了平和。","享受片刻早晨的宁静。"],
+"Good Intentions":["美好的心愿","每天以一个善良的心愿开始，这一天也会随之美好。","为今天许一个善良的心愿。"],
+"It Will Change":["一切都会过去","没有什么永远不变，难过的感受也不会。一切都会过去。","提醒自己：这也会过去。"],
+"Gentle Growth":["温柔地成长","在任何年纪，我们都在成长，就像一座花园。","今天学一件小小的新事物。"],
+"Hope After Storms":["风雨后的希望","风雨会过去，彩虹会出现。","今天找一件充满希望的事。"],
+"Warm Welcome":["热情的欢迎","把每一个人都当作朋友来欢迎。","今天热情地问候一个人。"],
+"Sitting Still":["静坐","静静地坐一会儿，是送给自己的礼物。","舒服地坐着，双手轻放在腿上。"],
+"Giving Thanks":["感谢","每一天都有礼物。心怀感谢，心就欢喜。","为生命中的三件礼物说声谢谢。"],
+"Soft Breeze":["微风","微风轻轻吹动树叶，却不伤害它们。像微风一样温柔吧。","今天感受一下吹在脸上的清风。"],
+"Calm Evening":["平静的傍晚","傍晚是放慢脚步、善待自己的时间。","今晚把灯调暗一点，放松下来。"],
+"You Are Loved":["你是被爱的","你被爱着，比你知道的还要多。","想一想爱你的人。"],
+"Shine Softly":["轻柔地发光","发光不需要大声。星星都是安静地闪耀。","今天安静地为自己感到骄傲。"],
+"Kind Mind":["善良的心","善良的心，就是平静的心。","把一个不友善的念头换成善良的念头。"],
+"Standing Strong":["屹立不倒","像一棵老橡树，你经历了许多风雨，依然屹立。","为自己的坚强感到骄傲。"],
+"Singing Heart":["歌唱的心","快乐的心，不用言语也会歌唱。","哼一首你喜欢的歌。"],
+"Evening Blessing":["晚间的祝福","愿你的夜晚平静，愿你的睡眠香甜。","带着微笑，对今天说晚安。"],
+"Fresh Start":["重新开始","每个早晨，你都可以重新开始。","今天以一件善事开始。"],
+"Gentle Rain":["细雨","细雨让万物生长，温柔的话让人成长。","用一句好话鼓励一个人。"],
+"Mindful Heart":["用心","当你带着爱去留意，一切都变得特别。","全心全意地关注一件你喜爱的事物。"],
+"Deep Peace":["深深的平静","深深的平静一直都在，在波浪之下，就像海底一样。","慢慢呼吸，感受一切之下的平静。"],
+"Night Is Kind":["夜晚是温柔的","夜晚来临，让我们休息。好好地让自己休息吧。","今晚在一个平静的念头中休息。"],
+"Our Thoughts":["我们的念头","“我们的一切，都由念头而生。用我们的念头，我们创造了世界。”","今天带着一个快乐的念头。"],
+"Happiness Follows":["幸福相随","“用清净的心说话、做事，幸福就会像影子一样，紧紧跟随你。”","用一颗纯净的心，说一句好话。"],
+"The Greatest Victory":["最大的胜利","“即使在战场上战胜千千万万的人，也不如战胜自己，才是最高贵的胜利者。”","今天温和地选择耐心，而不是烦躁。"],
+"Peace, Joy and Serenity":["平安、喜悦与宁静","“我们的每一次呼吸、每一步，都可以充满平安、喜悦和宁静。”","让三次呼吸充满平安。"],
+"Only Now":["只有此刻","“生命只存在于当下这一刻。”","留意此刻有什么美好。"],
+"Be Yourself":["做你自己","“美丽，就是做你自己。”","对自己说：我本来的样子就很可爱。"],
+"Love's Other Name":["爱的另一个名字","“理解，是爱的另一个名字。”","今天试着多理解一个人一点。"],
+"Hope Helps":["希望有帮助","“希望很重要，因为它能让当下不那么难熬。”","心里怀着一个充满希望的念头。"],
+"Kindness Is My Religion":["善良就是我的信仰","“我的宗教很简单，我的宗教就是善良。”","今天让善良来引导你的一个选择。"],
+"Love Is Needed":["我们需要爱","“爱与慈悲是必需品，不是奢侈品。没有它们，人类无法生存。”","今天和一个人分享一点爱。"],
+"Between Equals":["平等之间","“慈悲不是治疗者和受伤者之间的关系，而是平等的人之间的关系。”","今天把一个人看作和你平等的朋友。"],
+"Include Yourself":["也包括你自己","“如果你的慈悲不包括你自己，那它就不完整。”","像对待朋友一样善待自己。"],
+"A Mind That Lets Go":["放下的心","“用一颗放下的心去做每一件事。”","今天做一件事，不去担心结果如何。"],
+"At Ease":["安乐自在","“愿一切众生安乐自在。”","慢慢地把这个祝福说三遍。"],
+"Counting Kindness":["数着善念","有些人用念珠数着善良的祝福，一颗珠子一个祝福。","用十根手指，数十个善良的祝福。"],
+"A Gentle Voice":["温柔的声音","温柔的声音，能让一屋子安静下来，也能抚慰一颗心。","今天说话轻柔、温暖一些。"],
+"Moonlight Kindness":["月光般的善意","月光照耀每一个人，不做挑选。我们的善意也可以这样。","今天给你想到的每一个人送去善意。"],
+"New Dawn":["新的黎明","每一个黎明都是新的一页。昨天已经过去，今天是全新的。","用一个善良的祝福迎接新的一天。"],
+"Your Peaceful Glow":["你平和的光","当你平静时，别人也能感受到，就像烛光的温暖。","平静地坐着，让你的平和发出光来。"],
+"The Bodhi Tree":["菩提树","佛陀在一棵树下静坐，找到了平静。安静的时刻，也能带给我们平静。","安静地坐几分钟，好好呼吸。"],
+"Awakening":["觉醒","“佛陀”的意思是“觉醒的人”。我们也可以觉察身边的美好。","留意一件你平常没注意到的美好事物。"],
+"Right Intention":["正思维","以善良的心意开始，我们做的每件事都会更温和。","为今天立下一个善良的心意。"],
+"Wise Speech":["正语","佛陀教导我们，说真实、善良、有益的话。","说话前问问自己：这句话善良吗？"],
+"Right Effort":["正精进","正精进，就是温和地培养好的念头，放下不善的念头。","今天培养一个好的念头。"],
+"Right Mindfulness":["正念","正念，就是带着善意，温柔地留意当下这一刻。","温柔地留意自己的呼吸一分钟。"],
+"The Eightfold Path":["八正道","佛陀教导了一条智慧生活的道路：善良的想法、善良的话语、善良的行为。","在想法、话语和行动上都选择善良。"],
+"Joy for Others":["随喜","为别人的好运感到高兴，是一种美好的佛教修行，叫作“随喜”。","为一个人的好消息感到高兴。"],
+"Equanimity":["舍心","舍心是一颗平静、平衡的心，无论顺境逆境都很安稳。","对自己说：无论发生什么，我都能平静面对。"],
+"The Four Kind Hearts":["四无量心","佛陀教导了四种美好的心：慈、悲、喜、舍。","今天修习其中的一种。"],
+"Generosity of Spirit":["慷慨的心","给予是一种快乐。即使是一个微笑，也是珍贵的礼物。","今天给一个人一个温暖的微笑。"],
+"Gathering Goodness":["收集美好","像蜜蜂采集甜蜜一样，我们一整天都可以收集美好的时刻。","今天收集三个甜蜜的时刻。"],
+"One Thing at a Time":["一次做一件事","用心地一次只做一件事，心就会安静下来。","今天全神贯注地做一件事。"],
+"Content Like a Cat":["像猫一样知足","在阳光下蜷着的猫，懂得知足。知足是一份宝藏。","享受片刻简单的知足。"],
+"Wise and Patient":["智慧与耐心","耐心会让智慧慢慢地、稳稳地成长。","今天对一个人多一点耐心。"],
+"Impermanence":["无常","一切都在变化，就像云和季节。这让我们可以轻轻地看待生活。","今天轻轻地看待你的烦恼。"],
+"Interbeing":["相即相入","万物都相互联结：阳光、雨水、大地，还有我们。","感受自己和身边的一切相连。"],
+"A Flower Smiles":["花在微笑","花不用努力变美，它只是开放。你也可以只是做自己。","让自己片刻只是存在着。"],
+"Tiny Kindnesses":["小小的善意","再小的善意，也从不会白费。","今天做一件小小的善事。"],
+"A Soft Answer":["温和的回答","温和的回答能平息怒气，就像炎热天里的一阵凉风。","今天如果有人生气，温和地回应他。"],
+"Letting Worries Rest":["让烦恼休息","烦恼也可以休息。晚上我们可以把它们放下。","傍晚结束前，放下一个烦恼。"],
+"All Colors Welcome":["所有颜色都欢迎","每一种感受都可以来拜访。温柔地看见它，再让它离开。","温柔地看见一种感受，让它自然存在。"],
+"Spacious Heart":["宽广的心","宽广的心像大大的天空，可以容纳一切。","吸一口气，感受你的心宽宽地打开。"],
+"Folded Hands":["合掌","双手合十，是一个表示尊重与和平的温柔动作。","双手合十，轻轻低头。"],
+"Mantra of Peace":["平安的咒语","反复念一个平静的词，比如“平安”或“平静”，能让心安定。","轻轻地念“平安”十遍。"],
+"Caring for the Earth":["爱护地球","地球承载着我们所有人。我们可以用爱的念头祝福它。","给整个地球送去一个充满爱的祝福。"],
+"Kind Energy":["善良的能量","善良的念头，让我们周围的空气都变得更温暖。","温暖地想一想你身边的每一个人。"],
+"Morning Intention":["早晨的心愿","早上，我们可以许愿：愿我今天善良。","对自己说：愿我今天善良。"],
+"Sharing Merit":["回向功德","佛教徒有时会把自己善行的功德，回向给一切众生。","说：愿我今天做的好事，能帮助每一个人。"],
+"Refuge":["皈依","许多佛教徒在佛、法、僧中找到安慰。安慰总在身边。","想一想给你带来安慰的事物。"],
+"Gentle Speech at Home":["家中的柔和话语","家里说善良的话，家就会平和。","今天对每个和你说话的人都说善良的话。"],
+"The Joy of Listening":["倾听的喜悦","用安静的心去听，我们会把世界听得更清楚。","安静地听一听周围的声音。"],
+"Growing Wisdom":["增长智慧","智慧从善良、耐心和用心中成长。","今天用善意去留意一件事物。"],
+"Warm Heart, Warm World":["心暖，世界就暖","当我们的心温暖时，世界也会感觉更温暖。","用一句好话温暖一个人的心。"],
+"No Need to Hold":["不必抓住","我们不必抓住每一个念头，有些念头可以直接飘过。","让一个念头飘过，不去抓住它。"],
+"Bright Mind":["明亮的心","充满善意的心，像星星一样闪亮。","善意地想一个人，感受心变得明亮。"],
+"Quiet Gratitude":["安静的感恩","一天结束时，一声安静的谢谢，带来平静。","为今天的一件事说声谢谢。"],
+"Gentle Freedom":["温柔的自由","放下“应该”和“必须”，就能得到温柔的自由。","今天放下一个“应该”。"],
+"The Smiling Buddha":["微笑的佛陀","许多佛像都带着温柔的微笑。温柔的微笑，也可以是我们的修行。","保持温柔的微笑几分钟。"],
+"Just Breathing":["只是呼吸","有时候，最善良的事，就是只是呼吸，只是存在。","只是呼吸、只是存在一分钟。"],
+"Loving All Ages":["爱没有年龄","爱没有年龄。你的爱现在和从前一样珍贵。","和任何年龄的人分享你的爱。"],
+"Beginning Again":["重新开始","我们永远可以带着善良的心重新开始。","需要的时候，就温柔地重新开始。"],
+"Your Own Actions":["幸福来自行动","“幸福不是现成的，它来自你自己的行动。”","今天做一件让你开心的小事。"],
+"What It Teaches":["它教会我们的","“任何事情，在教会我们需要知道的道理之前，都不会离开。”","温柔地问自己：这一刻在教我什么？"],
+"A Still Forest Pool":["宁静的林中水塘","“试着保持正念，让事情顺其自然。你的心就会变得宁静，像清澈的林中水塘。”","想象一个清澈、宁静的林中水塘。"],
+"Perfect As You Are":["本来就很好","“你们每个人本来就很完美……当然，也可以再进步一点点。”","对本来的自己微笑一下。"],
+"Three Things":["三件事","“最后，只有三件事最重要：我们活得多好，爱得多好，学会放下得多好。”","想一位你曾好好爱过的人。"],
+"Kindness Everywhere":["慈心遍满","“把慈爱散播到整个世界。”","想象慈爱从你身上散播到整个世界。"],
+"Wishing Happiness":["愿他人快乐","“世间所有的喜乐，都来自愿他人快乐。”","今天祝愿三个人快乐。"],
+};
+
+const ZH_P = {
+"What Is Prana?":["什么是普拉纳？","在普拉纳疗愈里，“普拉纳”的意思是生命能量。它是让我们活着、让我们安好的温和能量。","慢慢吸一口气，心里想：我充满了生命能量。"],
+"Energy From the Sun":["来自太阳的能量","庄廓苏大师教导说，阳光给我们普拉纳。早上晒一点太阳，能让你感觉明亮。","想象温暖的金色阳光充满你的心。"],
+"Energy From the Air":["来自空气的能量","我们呼吸时，也从新鲜空气中吸收普拉纳。慢慢地深呼吸，能吸进更多。","慢慢地呼吸三次新鲜空气，心怀感谢。"],
+"Energy From the Ground":["来自大地的能量","大地也给我们地气普拉纳。感受和大地相连，能让你更安稳。","想象温柔的光之根，把你和大地连在一起。"],
+"Your Energy Body":["你的能量体","普拉纳疗愈教导说，我们有一个能量体，像一层柔和、看不见的光环围绕着我们，也叫作“气场”。","想象一层柔和、温暖的光环围绕着你。"],
+"Little Energy Wheels":["小小的能量轮","脉轮是能量体里的能量中心。你可以把它们想象成一朵朵小花，或一个个光轮。","想象胸口有一朵小小的光之花在发光。"],
+"The Heart Center":["心轮","心轮在胸口中间，是善良和温暖感受的中心。","把手放在胸口，想一个善良的念头。"],
+"The Crown Center":["顶轮","顶轮在头顶，是我们感受灵性之爱、与神圣相连的地方。","想象柔和的光照在你的头顶。"],
+"Twin Hearts":["双心冥想","双心冥想同时用到心轮和顶轮，让我们感受爱，并把爱分享给世界。","把手放在心口，温柔地微笑。"],
+"Blessing the Earth":["祝福地球","在双心冥想中，我们用慈爱、平安和喜悦祝福整个地球。","轻声说：愿地球充满平安。"],
+"Loving-Kindness":["慈爱","慈爱，就是用温暖、敞开的心，祝福别人一切美好。","祝福一个人：愿你快乐。"],
+"Bless Your Family":["祝福你的家人","庄廓苏大师教导我们常常祝福所爱的人。祝福，就是从心里送出的爱的心愿。","叫着家人的名字，一个一个地祝福他们。"],
+"Bless Your Neighbors":["祝福你的邻居","我们也可以祝福邻居，即使是不太熟悉的人。","说：愿我的邻居们身体健康。"],
+"Bless Everyone":["祝福每一个人","我们甚至可以祝福曾经难相处的人。这会让我们自己的心更轻松。","祝福一个难相处的人：愿你平安。"],
+"Forgiveness Frees You":["原谅让你自由","原谅不代表那份伤害是对的，而是让你自己不再背着它。","说：我原谅，我放下。"],
+"Heavy Energy":["沉重的能量","普拉纳疗愈教导说，旧的怒气和伤痛像沉重的灰色能量。原谅能帮它飘走。","想象一朵灰云飘走，后面是蓝天。"],
+"Light Energy":["轻盈的能量","快乐、善良、感恩的念头，像轻盈、明亮的能量。","想三件快乐的事，感受心变轻。"],
+"Thoughts Have Energy":["念头有能量","庄廓苏大师教导说，念头是有能量的。善良的念头能帮助自己，也帮助别人。","选一个善良的念头，在心里保持一分钟。"],
+"Inner Purification":["内在净化","内在净化，就是温柔地清理我们的念头、言语和行为，像拉开窗帘，让光照进来。","把一个烦躁的念头换成善良的念头。"],
+"Growing Virtues":["培养美德","美德是好的品质，比如善良、耐心和诚实。我们每天培养一点，就像照顾花园。","选一种美德，今天练习它。"],
+"Generosity":["慷慨","慷慨就是给予：一个微笑、一句好话、一点时间或一份礼物。给予让心敞开。","今天给出一点小东西：一句称赞或一个微笑。"],
+"What You Give Comes Back":["付出的会回来","普拉纳疗愈讲因果法则：我们付出什么，就会收到什么。善良会带回善良。","今天种下一颗善良的种子。"],
+"Tongue to the Roof":["舌抵上颚","在普拉纳疗愈中，会教大家把舌头轻轻抵在上颚，帮助能量顺畅流动。","呼吸时，把舌头轻轻抵在上颚。"],
+"Pranic Breathing":["普拉纳呼吸","普拉纳呼吸是缓慢、轻松的腹式呼吸。吸气时肚子轻轻鼓起，呼气时肚子轻轻落下。","慢慢地做五次腹式呼吸。"],
+"Healing Hands":["疗愈之手","在普拉纳疗愈中，双手用来感受和分享温和的能量，常常不需要碰触。","张开双手，感受它们温和的暖意。"],
+"Friendly Trees":["友善的树","健康的树会散发许多清新的能量。坐在树旁边，能让你感觉焕然一新。","看着一棵树，感谢它温和的能量。"],
+"The Centers of the Palms":["掌心","普拉纳疗愈的学员会学习把注意力轻轻放在掌心，来感受能量。","把注意力放在掌心中间一分钟。"],
+"Kindness to Yourself":["善待自己","慈爱也包括你自己。像祝福别人一样，温暖地祝福自己。","说：愿我平安，身体健康。"],
+"Be a Blessing":["成为一份祝福","一个美好的教导是：成为别人的祝福，走到哪里就把光带到哪里。","今天给一个人带去一点快乐。"],
+"Gratitude Lifts Energy":["感恩提升能量","心怀感谢，会让心里充满光和喜悦。","说出五件你感恩的事。"],
+"The Virtue of Patience":["耐心的美德","耐心是一种安静的美德，让我们的能量保持平静和安稳。","今天对一件事保持耐心。"],
+"Humility":["谦卑","谦卑，就是保持温和、开放，永远乐于学习。","今天学一件小小的新事物。"],
+"Cheerfulness":["开朗","开朗也是一种美德。开朗的心会让你整个人的能量都明亮起来。","今天对三个人或三样东西微笑。"],
+"Kind Words":["善良的话","话语带着能量。温柔、善良的话，让空气都变得轻松。","今天对一个人说一句好话。"],
+"Distant Blessings":["远方的祝福","普拉纳疗愈教导说，慈爱可以从心里送出，去祝福远方的人。","给一位住在远方的人送去祝福。"],
+"Open the Curtains":["拉开窗帘","阳光和新鲜空气，让家里的能量清新、愉快。","拉开窗帘，让光照进来。"],
+"Nature Heals":["大自然疗愈","大自然充满好的能量。植物、天空和清新的空气都能提振精神。","花几分钟欣赏大自然。"],
+"Quiet Meditation":["安静的冥想","哪怕只冥想几分钟，也能让心平静，让心明亮。","安静地坐三分钟，好好呼吸。"],
+"Loving All Beings":["爱一切生命","我们可以把慈爱送给动物、植物和每一个生命。","今天祝福一棵植物、一只小鸟或一只宠物。"],
+"Peace for the World":["世界和平","在双心冥想中，我们祝愿地球上每一个国家、每一个人都平安。","说：愿整个世界充满平安。"],
+"Joy to Share":["分享喜悦","我们可以用喜悦祝福别人，就像太阳分享它的温暖。","给一位朋友送去一个快乐的祝福。"],
+"Divine Light":["神圣之光","庄廓苏大师教导说，我们可以为自己和别人祈求神圣的祝福和光。","想象柔和的金光围绕着你爱的人。"],
+"Hope Is Energy":["希望是能量","希望是一种明亮、振奋的能量，帮助我们继续前行。","想一件你期待的事。"],
+"Letting Go of Worry":["放下担忧","担忧会耗费我们的能量。温柔地放下，能量就会更多。","慢慢呼气，放下一个担忧。"],
+"Anger Can Pass":["怒气会过去","怒气是沉重的能量。慢慢呼吸和善意，能让它融化。","如果生气了，就慢慢呼吸，并祝福那个人。"],
+"Forgiving Yourself":["原谅自己","我们都会犯错。原谅自己，是善良的，也是疗愈的。","说：我原谅自己，我在学习。"],
+"A Bright Aura":["明亮的气场","善良、快乐的念头，让气场明亮、轻盈。","想一个快乐的念头，想象你的光变得更亮。"],
+"A Minute of Light":["一分钟的光","你可以想象自己充满柔和的白光，平静又明亮。","想象柔和的白光温柔地充满你全身。"],
+"Starting With Gratitude":["从感恩开始","许多普拉纳疗愈的练习都从一声谢谢开始。感恩让心敞开。","用一声安静的谢谢开始今天。"],
+"Asking for Blessings":["祈求祝福","庄廓苏大师教导说，可以用你自己的方式，向神圣祈求指引、保护和祝福。","为今天祈求一份指引的祝福。"],
+"Blessing Plants":["祝福植物","植物喜欢被温柔地关注。你可以用爱的念头祝福它们。","祝福一棵植物，愿它健康成长。"],
+"The Golden Rule":["黄金法则","你希望别人怎样待你，就怎样待别人。这个简单的法则让我们的能量保持清净。","用你希望被对待的方式去对待一个人。"],
+"Non-Injury":["不伤害","不伤害，就是不用行为、言语或念头去伤害别人。","今天说话格外温柔一些。"],
+"Honesty":["诚实","诚实是一种明亮的美德。说真话让心保持轻松。","今天说的每句话都善良又诚实。"],
+"Steady Like a Tree":["像树一样稳","坚强的品格就像一棵结实的树，扎根在美德之中。","想一想你拥有的一个好品质。"],
+"Kindness in Action":["行动中的善良","服务就是行动中的爱。小小的帮助，就是真正的祝福。","帮一个人做一件小事。"],
+"Good Company":["好的陪伴","善良、快乐的人，能提升我们的能量。","和一位开朗的朋友相处，或给他打个电话。"],
+"Blessing Loved Ones at Night":["夜晚祝福所爱的人","睡觉前，你可以祝福你爱的人，也祝福整个世界。","今晚睡前，祝福你爱的人。"],
+"Morning Blessing":["早晨的祝福","用一个祝福开始一天，这一天就充满好的能量。","今天早上，祝福即将开始的一天。"],
+"Om":["唵（Om）","在双心冥想中，人们轻轻地念或默想“唵”，安住在平静的寂静中。","轻轻地哼“唵”三次。"],
+"Light Above":["头顶的光","冥想时，你可以想象头顶上方有一道温柔、明亮、充满平安的光。","想象头顶上方有一道柔和的光，保持一分钟。"],
+"Heart and Mind Together":["心与脑同行","庄廓苏大师教导我们，要让善良的心和清楚的头脑保持平衡。","今天做一个既善良又明智的选择。"],
+"Moderation":["适度","适度就是不多也不少，像一条温和的中间道路。","今天做事都适可而止。"],
+"Many Colors of Energy":["能量的许多颜色","普拉纳疗愈用柔和的颜色来形容能量，比如浅绿、浅蓝和淡紫。","看看你最喜欢的柔和颜色，好好欣赏它。"],
+"Pink for Love":["粉色代表爱","柔和的粉色常常和爱与温柔联系在一起。","今天穿一件或看一样柔和的粉色东西。"],
+"Light Blue for Calm":["浅蓝代表平静","柔和的浅蓝色和平静、安宁相连，就像晴朗的天空。","看看蓝天，或一样浅蓝色的东西。"],
+"Light Green for Freshness":["浅绿代表清新","柔和的浅绿色让我们想起新鲜的叶子和新的生命。","看看绿色的植物，感受清新。"],
+"Golden Light":["金色的光","金色的光和智慧、祝福相连。","想象金色的阳光围绕着你的家。"],
+"You Are a Soul":["你是一个灵魂","庄廓苏大师教导说，我们每个人都是一个灵魂，是神圣之光的一点火花。","说：我是神圣之光的一点火花。"],
+"Kindness and Firmness":["慈爱与坚定","庄廓苏大师教导说，慈爱可以和温和的坚定相平衡。善良不等于软弱。","今天说一句善良又诚实的话。"],
+"The Heart Softens Feelings":["心让情绪柔和","普拉纳疗愈教导说，充满爱的心能帮助柔化强烈的情绪，比如愤怒和恐惧。","强烈的情绪来时，想一想你爱的人。"],
+"The Center of Clear Thinking":["清晰思考的中心","眉心轮在两眉之间，和清晰的思考、好的选择相连。","想象两眉之间有柔和的光，清楚地思考。"],
+"The Throat Center":["喉轮","喉轮和说话、创造相连。善良的话语是来自这个中心的礼物。","今天说一句有创意又善良的话。"],
+"Om Mani Padme Hum":["唵嘛呢叭咪吽","庄廓苏大师写过关于这句古老慈悲咒语的书。它的声音柔和而安抚人心。","轻轻地念三遍“唵嘛呢叭咪吽”。"],
+"Peace Within":["内心的平静","心平静时，我们周围的能量也会平静。","双手放在心口，休息一分钟。"],
+"Spiritual Practice":["灵性修持","每天一点灵性修持，比如一个祈祷或祝福，让心保持明亮。","今天做一个简短的祈祷或祝福。"],
+"Light a Candle of Love":["点亮爱的烛光","你可以把自己的心想象成一支温暖的蜡烛，把光分享给别人。","想象你的心像蜡烛一样发光。"],
+"Loving Your Enemies":["爱你的敌人","庄廓苏大师鼓励我们，甚至祝福伤害过我们的人。这会让我们自己的心得到自由。","给一个你曾和他有矛盾的人送去祝福。"],
+"Good Thoughts Grow":["好念头会成长","善良的念头像种子。用爱照顾它们，它们就会开花。","对自己想一个善良的念头。"],
+"Smile Energy":["微笑的能量","微笑是你送给身边每一个人的小小祝福。","对下一个见到的人温暖地微笑。"],
+"Speak Blessings":["说祝福的话","与其抱怨，不如说祝福的话。这会改变一天的感觉。","把一句抱怨变成一声谢谢。"],
+"Kind Heart, Clear Mind":["善良的心，清楚的头脑","善良的心让你懂得关心，清楚的头脑帮你明智地选择。","说话前停一停，选择善良的话。"],
+"Tithing":["十一奉献","庄廓苏大师教导十一奉献，就是把我们所有的一小部分，捐给好的事业。给予让祝福流动。","想一个为善事出一点力的小方法。"],
+"Giving Time":["付出时间","付出你的时间和关注，是一份珍贵的礼物。","今天全心全意地关注一个人。"],
+"Abundance":["丰盛","慷慨打开丰盛的大门。给予和接受是一起流动的。","分享一样你有很多的东西。"],
+"Clear Like Crystal":["像水晶一样清澈","纯净的心像水晶一样清澈，善良的念头让它保持清澈。","想一个清澈、善良的念头。"],
+"Watch Your Thoughts":["留意你的念头","内在净化从留意念头开始，要温柔，不要评判。","温柔地留意自己的念头一分钟。"],
+"Small Changes":["小小的改变","内在的成长是一小步一小步发生的，就像毛毛虫变成蝴蝶。","今天做一个小小的好改变。"],
+"Character Building":["培养品格","庄廓苏大师教导说，培养好的品格，是灵性成长的一部分。","今天做一件让你感到骄傲的事。"],
+"Caring Compassion":["关怀的慈悲","慈悲，就是关心别人的痛苦，并希望帮助他们。","给一位身体不适的人送去关怀的念头。"],
+"Loving Presence":["爱的陪伴","只是善良地陪伴一个人，就是一份疗愈的礼物。","陪一个人坐一会儿，享受彼此的陪伴。"],
+"Positive Energy":["正面的能量","普拉纳疗愈教导说，喜悦和希望这些正面的感受，会让能量体变得明亮。","今天做一件让你开心的事。"],
+"A Garden of Virtues":["美德的花园","善良、耐心和慷慨，是你心中花园里的花。","说出你心中花园里的花。"],
+"Prayer Is Energy":["祈祷是能量","真诚的祈祷或祝福，会送出好的能量。","为一个人做一个真心的祈祷。"],
+"The Great Invocation":["伟大的祈请文","双心冥想常常以一段叫作《伟大的祈请文》的祈祷开始，为世界祈求光与爱。","用你自己的话，为世界祈求光与爱。"],
+"Thank You at the End":["最后说谢谢","双心冥想以感恩结束。感恩让祝福圆满。","今天以一声谢谢结束。"],
+"Sharing Is Healing":["分享就是疗愈","当我们用爱祝福别人时，自己的心也会被充满。","今天祝福三个人，留意自己的感受。"],
+"Calm Mind, Calm Energy":["心平静，能量就平静","平静的心，让能量体感觉顺畅、平和。","静静地坐着，让心安定下来。"],
+"Clearing Stress":["清理压力","压力像缠在一起的能量。慢慢呼吸和一个祝福，能帮它变得顺畅。","慢慢呼吸三次，祝福自己。"],
+"Grounded and Calm":["踏实与平静","感受和大地相连，能让你感到安全、平静。","慢慢呼吸，感受大地托住你。"],
+"Lightness of Being":["轻盈的存在","放下怨恨，让我们像蝴蝶一样轻盈。","今天放下一个旧的心结。"],
+"Kindness Every Day":["每天善良","每天练习善良，是一条简单而有力的灵性道路。","今天做一件善事。"],
+"Good News":["好消息","分享好消息，会传播轻盈的能量。","和一个人分享一个好消息。"],
+"Joyful Energy":["喜悦的能量","喜悦能疗愈。欢笑和享受生活，让整个能量体都轻盈起来。","今天为一件有趣的事笑一笑。"],
+"Blessing Your Town":["祝福你的城市","你可以用平安和善意，祝福你住的整个城市。","祝福你住的地方。"],
+"Good Thoughts, Light Aura":["好念头，亮气场","就像让家保持明亮一样，我们可以用好的念头让气场保持明亮。","把一个沉重的念头换成轻松的念头。"],
+"Flowers Bring Joy":["花带来喜悦","鲜花给房间带来美丽和愉快的能量。","把一朵花或一盆植物放在你看得见的地方。"],
+"Heart Opening":["心的绽放","当我们善良时，心轮就像阳光下的花一样绽放。","今天做一件温暖、有爱的事。"],
+"Wisdom":["智慧","智慧，就是带着善意运用我们所知道的。","和一位年轻人分享一点智慧。"],
+"Inner Light":["内在之光","每个人都有内在的光。善良让它更加明亮。","今天留意一个人身上的好。"],
+"Seeing the Good":["看见美好","在别人身上寻找美好，会让你们两个人都更开心。","在你遇到的每个人身上找一个优点。"],
+"Releasing Sadness":["释放悲伤","悲伤可以温柔地释放，就像呼出一朵灰色的云。","慢慢呼气，让一点悲伤离开。"],
+"Welcoming Joy":["迎接喜悦","吸气时，我们可以迎接喜悦和光。","吸一口气，心里想：我迎接喜悦。"],
+"Silence":["寂静","寂静让心和头脑得到温柔的休息。","享受两分钟的寂静。"],
+"Kind Deeds Count":["善行都算数","没有哪件善事太小，每一件都是祝福。","不用别人要求，主动做一件小小的善事。"],
+"Deep Roots of Faith":["信心的深根","信心和信任帮助我们在困难时保持安稳。","想一想你深深信任的东西。"],
+"Right Speech":["正确的言语","真诚、善良地说话，让我们的能量保持清净、明亮。","接下来一小时，只说善良的话。"],
+"Right Action":["正确的行为","为了正确的理由去做好事，会带给心平静。","只因为它是好事，去做一件好事。"],
+"Peaceful Thoughts":["平静的念头","平静的念头，造就平静的能量体。","想一个平静的地方，在那里休息一下。"],
+"Hands of Blessing":["祝福之手","你可以张开双手，让心里的祝福通过双手送出去。","张开双手，给世界送去祝福。"],
+"Kindness Toward Animals":["善待动物","慈爱也包括动物。善待动物，会让心更明亮。","祝福今天看到的一只动物。"],
+"Beauty and Energy":["美与能量","美好的事物，比如艺术和音乐，能提升我们的能量。","欣赏一段音乐或一幅美丽的画。"],
+"Good Morning Prana":["早安普拉纳","早晨的空气和光线格外清新，充满能量。","享受片刻早晨的空气。"],
+"The Rising Light":["升起的光","每一次日出都提醒我们：光总会回来，在外面，也在心里。","想象早晨的太阳在你心中升起。"],
+"The Healing Heart":["疗愈的心","充满爱的心就是疗愈的心，疗愈自己，也疗愈别人。","从心里送爱给一个需要的人。"],
+"Let Love Flow":["让爱流动","爱在分享中成长。给得越多，拥有得越多。","今天和一个人分享你的爱。"],
+"Blessing Strangers":["祝福陌生人","你可以祝福路上遇到的人，或电视上看到的人。","今天默默祝福一位陌生人。"],
+"Blessing After Storms":["风雨后的祝福","听到不好的消息后，我们可以送去平安和安慰的祝福。","给需要帮助的人送去安慰的祝福。"],
+"Gentle Night":["温柔的夜晚","夜晚祝福世界，会带来安稳的睡眠。","今晚睡前，祝福整个世界。"],
+"You Are a Channel":["你是爱的通道","庄廓苏大师教导说，我们可以成为神圣之爱的通道，就像窗户让阳光照进来。","说：愿我成为爱与善良的通道。"],
+"Radiate Kindness":["散发善意","想象善意像阳光一样从你身上散发出来。","想象善意从你的心里照耀出来。"],
+"Tenderness":["温柔","温柔是柔软、轻柔的爱，它能疗愈人心。","今天温柔地对待自己和别人。"],
+"Strength and Softness":["坚强与柔软","一颗好的心，可以同时坚强又柔软。","今天温和地坚持善良。"],
+"Loving Words for Yourself":["对自己说爱的话","温柔地对自己说话，会让你的能量感到温暖。","对自己说：我是被爱的。"],
+"Every Day Is Practice":["每天都是修行","灵性成长是每天的练习，不是比赛。","今天练习一种美德，一点点就好。"],
+"Joy of Giving":["给予的喜悦","给予会带来一种特别的喜悦，会一直留在心里。","送一份小礼物，或写一张温暖的小纸条。"],
+"Peace Is Possible":["和平是可能的","和平从每个人的内心开始，再向外扩散。","说：和平从我开始。"],
+"Blessing With Your Eyes":["用眼睛祝福","用慈祥的眼光看别人，就是在祝福他们。","今天用温暖、慈祥的眼光看一个人。"],
+"Warmth for Others":["给别人温暖","我们的善意能像温暖的炉火一样温暖别人。","用一句好话温暖一个人的一天。"],
+"Soft Breath":["轻柔的呼吸","缓慢、轻柔的呼吸，能让能量体平静下来。","轻轻地、慢慢地呼吸一分钟。"],
+"Kindness Is Strength":["善良就是力量","善良需要真正的力量和勇气。","在困难的时刻选择善良。"],
+"New Beginnings":["新的开始","每一天都是在善良中成长的新机会。","今天用一件善事重新开始。"],
+"Love Heals Hearts":["爱疗愈人心","爱是最能疗愈的能量。","给一个伤心的人送去爱。"],
+"Blessing Your Home":["祝福你的家","你可以用平安、和谐和喜悦祝福你的家。","想象家里每个房间都充满柔和的光。"],
+"Harmony":["和谐","和谐，就是和别人、和自己都和平相处。","今天用温柔带来和谐。"],
+"Shining Example":["闪亮的榜样","你的好榜样，为别人照亮道路。","在别人看得到的地方表现善良。"],
+"Deep Peace Meditation":["深深平静的冥想","祝福之后安住在平静的寂静中，是双心冥想里美好的一部分。","祝福之后，静静地坐一分钟。"],
+"Thankful Heart":["感恩的心","感恩的心，是快乐的心。","今天感谢三个人。"],
+"Pure Intentions":["纯净的心意","好的心意像清新的晨光，让我们的行为变得纯净。","今天以一个好的心意开始。"],
+"Daily Practice":["每日修持","庄廓苏大师鼓励每天做一点灵性修持，比如祝福、祈祷或冥想。","为今天选一个小小的灵性修持。"],
+"Let Negative Thoughts Pass":["让负面念头过去","负面的念头来时，让它像云一样飘过，然后想一件善良的事。","把一个负面念头变成一个祝福。"],
+"Bless Your Friends":["祝福你的朋友","祝福你的朋友健康、快乐、平安。","叫着名字，祝福一位朋友。"],
+"Happiness Is Contagious":["快乐会传染","你的快乐会传给别人，就像鸟儿的歌声。","和一个人分享一个快乐的时刻。"],
+"Patience With Growth":["耐心成长","树长得慢，却长得结实。灵性也是这样。","对自己的成长多一点耐心。"],
+"Kindness Lasts":["善意长存","善良的行为留下好的能量，会持续很久。","想起一件别人为你做过的善事。"],
+"Gentle Forgiveness":["温柔的原谅","原谅可以一点一点地发生，这样也没关系。","今天原谅一点点就好。"],
+"Blossoming":["绽放","每一天，你都可以在善良中多绽放一点。","做一件让你的心开花的事。"],
+"Radiant Heart":["光芒四射的心","充满爱的心像太阳一样发光，温暖身边的每一个人。","把你的心想象成一个明亮、温柔的太阳。"],
+"Purity of Heart":["心的纯净","纯净的心像一朵莲花：干净、温柔又美丽。","想一个纯净、有爱的念头。"],
+"Blessing the Sick":["祝福生病的人","我们可以用安慰和疗愈，祝福身体不适的人。","给一位生病的人送去温柔的祝福。"],
+"Loving Without Conditions":["无条件的爱","真正的爱只是给予，不求回报。","做一件善事，不期待任何回报。"],
+"Restful Energy":["休养的能量","平静的傍晚，让能量体得到休息和恢复。","享受一个安静、平和的傍晚。"],
+"Brighten Someone's Day":["照亮别人的一天","只要让别人的一天亮一点点，你就是在祝福他。","用一通电话或一个微笑，照亮别人的一天。"],
+"Daily Blessings":["每日的祝福","每天祝福别人，会让祝福成为快乐的习惯。","今天送出三个祝福。"],
+"Gentle Heart, Gentle World":["温柔的心，温柔的世界","当许多心都变得温柔，整个世界也会更温柔。","今天做每件事都温柔一些。"],
+"Twin Hearts Every Day":["每天双心冥想","许多人常常做双心冥想。即使每天只做一个小小的祝福，也是很好的开始。","今天用一分钟祝福地球。"],
+"Kindness Toward Neighbors":["善待邻居","对邻居友好地挥挥手，就会送出温暖、快乐的能量。","对一位邻居挥挥手或问声好。"],
+"Energy of Hope":["希望的能量","充满希望的念头明亮又轻盈，温柔地提升我们的心。","说：好事就要来了。"],
+"Soft Heart Energy":["柔软的心的能量","柔软、敞开的心，让别人感到温暖和欢迎。","今天热情地欢迎一个人。"],
+"Bless the Trees":["祝福树木","树给我们新鲜的空气和能量。我们可以感谢它们、祝福它们。","感谢一棵树带来的新鲜空气。"],
+"Bless the Waters":["祝福江河山林","在双心冥想中，我们可以祝福整个地球的海洋、河流、高山和森林。","用平安祝福海洋和森林。"],
+"Bless the Animals":["祝福动物","我们可以祝福世界上所有的动物平安、安全。","今天祝福所有的鸟儿和动物。"],
+"Wishing Well for All":["祝福所有人","祝福每一个人，无论远近，会让心变得宽广而善良。","祝福你所在城市的每一个人。"],
+"Unity":["合一","我们都是相连的，就像一道彩虹里的颜色。","记住：我们都是一个大家庭。"],
+"Quiet Prayer":["安静的祈祷","用一个安静的感恩祈祷结束一天，是很美好的事。","今晚轻声说一声谢谢。"],
+"Gentle Awareness":["温柔的觉察","觉察自己的感受，帮助我们选择善良。","留意自己的感受，然后选择一个善良的念头。"],
+"Loving Memories":["爱的回忆","带着感恩回忆所爱的人，会给他们送去爱的能量。","带着感恩的心，想一想一位所爱的人。"],
+"Gift of Each Day":["每一天的礼物","每一天都是祝福。我们可以用喜悦回赠祝福。","说：感谢这一天。"],
+"Gentle Changes Within":["内在温柔的改变","当我们修习美德，内在就会温柔而美丽地改变。","留意你变得更善良的一个地方。"],
+"Calm After Upset":["烦乱后的平静","心烦之后，慢慢呼吸和一个祝福，能帮助能量安定下来。","心烦时，慢慢呼吸，祝福这一刻。"],
+"Heart of Service":["服务的心","帮助别人，哪怕是很小的方式，都是快乐的灵性修持。","今天主动帮助一个人。"],
+"Kindness Blooms":["善意开花","今天分享的善意，明天可能在别人的生命里开花。","分享一份善意，让它开花。"],
+"Peaceful Heart at Night":["夜晚平静的心","睡前放下一天的烦恼，让能量体得到休息。","今晚放下今天的烦恼。"],
+"Keep Learning":["继续学习","庄廓苏大师热爱学习。在任何年纪，我们都可以学习新的好东西。","今天学一个新的、开心的小知识。"],
+};
+
 const PHOTOS = [{"src":"IMG_1964.jpg","date":"2014-12-24","w":1200,"h":900},{"src":"IMG_6317.jpg","date":"2015-07-18","w":900,"h":1200},{"src":"IMG_8713.jpg","date":"2017-07-15","w":1200,"h":902},{"src":"IMG_0721.jpg","date":"2017-10-29","w":1200,"h":900},{"src":"IMG_0723.jpg","date":"2017-10-29","w":1200,"h":900},{"src":"IMG_0724.jpg","date":"2017-10-29","w":1200,"h":900},{"src":"IMG_0725.jpg","date":"2017-10-29","w":1200,"h":900},{"src":"IMG_0726.jpg","date":"2017-10-29","w":1200,"h":900},{"src":"IMG_0197.jpg","date":"2018-03-25","w":1200,"h":900},{"src":"IMG_2820.jpg","date":"2018-08-27","w":900,"h":1200},{"src":"IMG_2829.jpg","date":"2018-08-28","w":900,"h":1200},{"src":"IMG_2835.jpg","date":"2018-08-28","w":900,"h":1200},{"src":"IMG_2836.jpg","date":"2018-08-28","w":900,"h":1200},{"src":"IMG_2838.jpg","date":"2018-08-28","w":900,"h":1200},{"src":"IMG_2845.jpg","date":"2018-08-28","w":1200,"h":900},{"src":"IMG_2855.jpg","date":"2018-08-28","w":900,"h":1200},{"src":"IMG_6335.jpg","date":"2019-07-20","w":1200,"h":900},{"src":"IMG_3092.jpg","date":"2019-08-10","w":1200,"h":902},{"src":"IMG_6542.jpg","date":"2019-08-10","w":900,"h":1200},{"src":"IMG_9744.jpg","date":"2021-07-10","w":1200,"h":900},{"src":"IMG_9930.jpg","date":"2021-07-17","w":900,"h":1200},{"src":"IMG_9932.jpg","date":"2021-07-17","w":900,"h":1200},{"src":"IMG_3102.jpg","date":"2021-11-07","w":900,"h":1200},{"src":"IMG_4105.jpg","date":"2022-08-13","w":901,"h":1200},{"src":"IMG_1831.jpg","date":"2022-10-28","w":1200,"h":900},{"src":"IMG_1834.jpg","date":"2022-10-28","w":1200,"h":900},{"src":"IMG_1839.jpg","date":"2022-10-28","w":1200,"h":900},{"src":"IMG_1846.jpg","date":"2022-10-28","w":900,"h":1200},{"src":"IMG_2500.jpg","date":"2022-11-24","w":1200,"h":900},{"src":"IMG_2501.jpg","date":"2022-11-24","w":1200,"h":900},{"src":"IMG_2506.jpg","date":"2022-11-24","w":1200,"h":900},{"src":"IMG_3825.jpg","date":"2023-01-22","w":1200,"h":900},{"src":"IMG_5250.jpg","date":"2023-01-22","w":900,"h":1200},{"src":"IMG_5252.jpg","date":"2023-01-22","w":900,"h":1200},{"src":"IMG_9882.jpg","date":"2023-05-06","w":1200,"h":900},{"src":"IMG_9884.jpg","date":"2023-05-06","w":1200,"h":900},{"src":"IMG_9886.jpg","date":"2023-05-06","w":1200,"h":900},{"src":"IMG_9888.jpg","date":"2023-05-06","w":900,"h":1200},{"src":"IMG_1056.jpg","date":"2024-01-22","w":1200,"h":900},{"src":"IMG_2438.jpg","date":"2025-01-31","w":1200,"h":900},{"src":"IMG_2440.jpg","date":"2025-01-31","w":1200,"h":900},{"src":"IMG_4080.jpg","date":"2025-05-10","w":900,"h":1200},{"src":"IMG_4092.jpg","date":"2025-05-10","w":1200,"h":900},{"src":"IMG_4095.jpg","date":"2025-05-10","w":1200,"h":900},{"src":"IMG_4096.jpg","date":"2025-05-10","w":1200,"h":900},{"src":"IMG_9303.jpg","date":"2025-11-27","w":675,"h":1200},{"src":"IMG_9311.jpg","date":"2025-11-27","w":900,"h":1200},{"src":"IMG_9314.jpg","date":"2025-11-27","w":900,"h":1200},{"src":"IMG_9318.jpg","date":"2025-11-27","w":900,"h":1200},{"src":"IMG_9320.jpg","date":"2025-11-27","w":900,"h":1200},{"src":"IMG_3154.jpg","date":"2026-05-20","w":900,"h":1200},{"src":"IMG_3162.jpg","date":"2026-05-20","w":900,"h":1200},{"src":"IMG_3171.jpg","date":"2026-05-20","w":900,"h":1200},{"src":"IMG_3459.jpg","date":"2026-06-06","w":1200,"h":900},{"src":"IMG_3481.jpg","date":"2026-06-07","w":900,"h":1200},{"src":"IMG_3484.jpg","date":"2026-06-07","w":900,"h":1200},{"src":"IMG_3501.jpg","date":"2026-06-07","w":900,"h":1200},{"src":"IMG_3507.jpg","date":"2026-06-07","w":900,"h":1200},{"src":"IMG_5666.jpg","date":"2026-09-29","w":720,"h":960}];
 
 
 const KIND = {wisdom:'Gentle wisdom', pranic:'Healing light'};
+// Mandarin (Simplified Chinese) versions, used only for Read aloud. Keyed by English title.
+const ZH = Object.assign({}, ZH_B, ZH_P);
+const BY_ZH = {'Thich Nhat Hanh':'一行禅师', 'The Dhammapada':'《法句经》', 'The Buddha, Metta Sutta':'佛陀《慈经》', 'Pema Chödrön':'佩玛·丘卓',
+  'Ajahn Chah':'阿姜查', 'Shunryu Suzuki':'铃木俊隆', 'The Dalai Lama':'达赖喇嘛', 'Jack Kornfield':'杰克·康菲尔德', 'Shantideva':'寂天菩萨'};
 // Alternate every day: Buddhist wisdom, Pranic Healing teaching, wisdom, teaching, ...
 const ENTRIES = [];
-const mk = (e, kind) => ({kind, art:e[0], title:e[1], text:e[2], step:e[3], by:e[4]||''});
+const mk = (e, kind) => { const z = ZH[e[1]] || []; return {kind, art:e[0], title:e[1], text:e[2], step:e[3], by:e[4]||'',
+  zh:{title:z[0]||'', text:z[1]||'', step:z[2]||'', by:e[4] ? (BY_ZH[e[4]]||e[4]) : ''}}; };
 for (let i = 0; i < Math.max(BUDDHA.length, PRANIC.length); i++) {
   if (BUDDHA[i]) ENTRIES.push(mk(BUDDHA[i], 'wisdom'));
   if (PRANIC[i]) ENTRIES.push(mk(PRANIC[i], 'pranic'));
 }
 
-function localKey(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
-function dayNumber(d){ return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000); }
-// Day 0 is Wednesday, Sept 30, 2026 (first lesson + first photo). Earlier dates just show day 0.
-const START_DAY = Math.floor(Date.UTC(2026, 8, 30) / 86400000);
-function dayIndex(d){ return Math.max(0, dayNumber(d) - START_DAY); }
-function entryFor(d){ return ENTRIES[dayIndex(d) % ENTRIES.length]; }
-// Hidden test mode: ?preview=YYYY-MM-DD shows that day exactly as it would look, without touching localStorage.
+// ---- The "page day" runs 7:00 AM to 6:59 AM Pacific time, whatever timezone the device is set to. ----
+const TZ = 'America/Los_Angeles', SWITCH_HOUR = 7, DAY_MS = 86400000;
+const START_DAY = Math.floor(Date.UTC(2026, 8, 30) / DAY_MS);   // day 0 = Wed Sept 30, 2026 (from 7:00 AM PT)
+const ptFmt = new Intl.DateTimeFormat('en-US', {timeZone: TZ, year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', hour12:false});
+function ptParts(t){ const o = {}; ptFmt.formatToParts(t).forEach(p => o[p.type] = p.value); return {y:+o.year, m:+o.month, d:+o.day, h:(+o.hour) % 24}; }
+// Hidden test mode: ?preview=YYYY-MM-DD shows that page day exactly as it would look, without touching localStorage.
 const PREVIEW = (() => {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(new URLSearchParams(location.search).get('preview') || '');
   if (!m) return null;
-  const d = new Date(+m[1], +m[2] - 1, +m[3]);
-  return (d.getFullYear() === +m[1] && d.getMonth() === +m[2] - 1 && d.getDate() === +m[3]) ? m : null;
+  const d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+  return (d.getUTCFullYear() === +m[1] && d.getUTCMonth() === +m[2] - 1 && d.getUTCDate() === +m[3]) ? Math.floor(d / DAY_MS) : null;
 })();
-function currentDate(){
-  const now = new Date();
-  if (!PREVIEW) return now;
-  return new Date(+PREVIEW[1], +PREVIEW[2] - 1, +PREVIEW[3], now.getHours(), now.getMinutes(), now.getSeconds());
+function pageDay(t = new Date()){
+  const p = ptParts(t);
+  let num = Math.floor(Date.UTC(p.y, p.m - 1, p.d) / DAY_MS);
+  if (p.h < SWITCH_HOUR) num -= 1;            // before 7 AM PT it is still yesterday's page
+  if (PREVIEW !== null) num = PREVIEW;
+  return {num, hour: p.h, key: new Date(num * DAY_MS).toISOString().slice(0, 10)};
 }
+function dayIndex(pd){ return Math.max(0, pd.num - START_DAY); }   // before day 0 -> day 0
+function entryFor(pd){ return ENTRIES[dayIndex(pd) % ENTRIES.length]; }
 function greeting(h){ return h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening'; }
+function greetingZh(h){ return h < 12 ? '早上好' : h < 17 ? '下午好' : '晚上好'; }
 
+let currentHour = 8;
 function render(){
-  const now = currentDate();
-  const e = entryFor(now);
-  document.getElementById('date').textContent = now.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
-  document.getElementById('greet').textContent = greeting(now.getHours()) + ', ' + NAME + ' 💛';
+  const pd = pageDay();
+  const e = entryFor(pd);
+  currentHour = pd.hour;
+  document.getElementById('date').textContent = new Date(pd.num * DAY_MS + DAY_MS / 2).toLocaleDateString('en-US', {timeZone:'UTC', weekday:'long', year:'numeric', month:'long', day:'numeric'});
+  document.getElementById('greet').textContent = greeting(pd.hour) + ', ' + NAME + ' 💛';
   document.title = 'A Little Message for ' + NAME;
   document.getElementById('art').innerHTML = SPARK + '<g class="floaty">' + (ART[e.art] || ART.heart) + '</g>';
   const tag = document.getElementById('tag'); tag.textContent = KIND[e.kind]; tag.className = 'tag ' + e.kind;
@@ -551,16 +936,16 @@ function render(){
   const by = document.getElementById('by'); by.hidden = !e.by; by.textContent = e.by ? '— ' + e.by : '';
   document.getElementById('step').textContent = ' ' + e.step;
   document.getElementById('foot').textContent = 'A new message arrives every morning, ' + NAME + '.';
-  // once-a-day memory
-  const key = 'daily-msg-seen', today = localKey(now);
-  if (PREVIEW) {
-    document.getElementById('note').hidden = true;   // preview = first visit look; never reads or writes storage
+  // once-a-day memory, keyed by the page day
+  const key = 'daily-msg-seen', today = pd.key;
+  if (PREVIEW !== null) {
+    document.getElementById('note').hidden = true;   // preview = first-visit look; never reads or writes storage
   } else {
     let seen = null; try { seen = localStorage.getItem(key); } catch(_) {}
     document.getElementById('note').hidden = (seen !== today);
     try { localStorage.setItem(key, today); } catch(_) {}
   }
-  renderPhoto(now); //PHOTO-CALL
+  renderPhoto(pd); //PHOTO-CALL
   renderedDay = today;
   return e;
 }
@@ -568,10 +953,10 @@ function render(){
 
 //PHOTO-JS-START
 // One family photo per day, cycling through all of them before repeating.
-function renderPhoto(now){
+function renderPhoto(pd){
   const fig = document.getElementById('photo');
   if (typeof PHOTOS === 'undefined' || !PHOTOS.length) { fig.hidden = true; return; }
-  const n = PHOTOS.length, ph = PHOTOS[dayIndex(now) % n];
+  const n = PHOTOS.length, ph = PHOTOS[dayIndex(pd) % n];
   const img = document.getElementById('photoImg');
   img.onload = () => { fig.hidden = false; };
   img.onerror = () => { fig.hidden = true; };   // e.g. standalone copy without the photos folder
@@ -594,27 +979,62 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && !viewer.hi
 let renderedDay = null;
 let current = render();
 
-// Read aloud (slow, gentle)
+// ---- Read aloud in Mandarin with a woman's voice ----
 const btn = document.getElementById('read'), label = document.getElementById('readLabel');
-if (!('speechSynthesis' in window)) { btn.hidden = true; }
+const LABEL = '朗读 / Read aloud', LABEL_STOP = '停止 / Stop';
+label.textContent = LABEL;
+const synth = window.speechSynthesis;
+if (!synth || typeof SpeechSynthesisUtterance === 'undefined') btn.hidden = true;
+const FEMALE_ZH = /ting-?ting|mei-?jia|sin-?ji|普通话|xiaoxiao|xiaoyi|xiaohan|xiaomo|xiaorui|xiaoxuan|xiaochen|huihui|yaoyao|hsiaochen|hsiaoyu|hanhan|yating|tracy|lili|shanshan|yu-?shu|female|女/i;
+const MALE_ZH = /kangkang|yunxi|yunyang|yunjian|yunfeng|yunhao|yunye|yunze|zhiwei|danny|li-?mu|(^|[^e])male|男/i;
+let zhVoice = null;
+function pickVoice(){
+  const vs = (synth && synth.getVoices()) || [];
+  const zh = vs.filter(v => /^(zh|cmn)([-_]|$)/i.test(v.lang));
+  const isCN = v => /^(zh|cmn)[-_](cn|hans)/i.test(v.lang), isTW = v => /[-_](tw|hant)/i.test(v.lang);
+  const fem = v => FEMALE_ZH.test(v.name) && !MALE_ZH.test(v.name), notMale = v => !MALE_ZH.test(v.name);
+  zhVoice = zh.find(v => isCN(v) && fem(v)) || zh.find(v => isTW(v) && fem(v)) || zh.find(fem)
+         || zh.find(v => isCN(v) && notMale(v)) || zh.find(v => isTW(v) && notMale(v)) || zh.find(notMale) || zh[0] || null;
+  return zhVoice;
+}
+if (synth) { pickVoice(); if (synth.addEventListener) synth.addEventListener('voiceschanged', pickVoice); else synth.onvoiceschanged = pickVoice; }
+function mandarinScript(e){
+  const z = e.zh;
+  const end = s => /[。！？]$/.test(s) ? s : s + '。';
+  return greetingZh(currentHour) + '，' + NAME + '。' + end(z.title) + z.text.replace(/[“”]/g, '') + (z.by ? '——' + z.by + '。' : '') + '今天的小小一步：' + z.step;
+}
+function speakMandarin(text){
+  // Short chunks avoid Chrome's ~15-second cut-off and keep iOS Safari happy.
+  const parts = (text.match(/[^。！？；]+[。！？；]?/g) || [text]).map(s => s.trim()).filter(Boolean);
+  if (!zhVoice) pickVoice();
+  synth.cancel();
+  parts.forEach((p, i) => {
+    const u = new SpeechSynthesisUtterance(p);
+    u.lang = 'zh-CN'; u.rate = 0.8; u.pitch = 1.1;
+    if (zhVoice) u.voice = zhVoice;
+    if (i === parts.length - 1) u.onend = () => { label.textContent = LABEL; };
+    u.onerror = () => { label.textContent = LABEL; };
+    synth.speak(u);          // called synchronously inside the tap, which iOS requires
+  });
+  if (synth.paused) synth.resume();
+}
 btn.addEventListener('click', () => {
-  const s = window.speechSynthesis;
-  if (s.speaking) { s.cancel(); label.textContent = 'Read aloud'; return; }
+  if (synth.speaking || synth.pending) { synth.cancel(); label.textContent = LABEL; return; }
+  label.textContent = LABEL_STOP;
   const e = current;
-  const text = document.getElementById('greet').textContent.replace('💛','') + '. ' + e.title + '. ' + e.text + (e.by ? ' — ' + e.by + '.' : '') + ' Today\'s little step: ' + e.step;
-  const u = new SpeechSynthesisUtterance(text.replace(/[“”]/g,''));
-  u.rate = 0.75; u.pitch = 1; u.lang = 'en-US';
-  const v = s.getVoices().find(v => /en(-|_)/i.test(v.lang) && /female|samantha|karen|moira|serena|victoria|google us english/i.test(v.name));
-  if (v) u.voice = v;
-  u.onend = u.onerror = () => { label.textContent = 'Read aloud'; };
-  label.textContent = 'Stop reading';
-  s.speak(u);
+  if (e.zh && e.zh.text) { speakMandarin(mandarinScript(e)); return; }
+  // Fallback: no Mandarin version for this entry yet -> read the English slowly.
+  synth.cancel();
+  const u = new SpeechSynthesisUtterance((greeting(currentHour) + ', ' + NAME + '. ' + e.title + '. ' + e.text + (e.by ? ' — ' + e.by + '.' : '') + " Today's little step: " + e.step).replace(/[“”]/g, ''));
+  u.lang = 'en-US'; u.rate = 0.75;
+  u.onend = u.onerror = () => { label.textContent = LABEL; };
+  synth.speak(u);
 });
 
-// If the page is left open past midnight, gently refresh to the new day's message.
-if (!PREVIEW) {
-  setInterval(() => { if (localKey(new Date()) !== renderedDay) current = render(); }, 60000);
-  document.addEventListener('visibilitychange', () => { if (!document.hidden && localKey(new Date()) !== renderedDay) current = render(); });
+// If the page is left open, switch to the new card at 7:00 AM Pacific.
+if (PREVIEW === null) {
+  setInterval(() => { if (pageDay().key !== renderedDay) current = render(); }, 30000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden && pageDay().key !== renderedDay) current = render(); });
 }
 </script>
 </body>
